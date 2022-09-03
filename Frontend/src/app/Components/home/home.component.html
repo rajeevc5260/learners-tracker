@@ -1,0 +1,62 @@
+<div class="content-main">
+  <div class="content-title">
+    <h1>{{ title }}</h1>
+    <p>
+      {{ contentPara }}
+    </p>
+    <button mat-button class="calToAct">
+      {{ login }} <mat-icon>east</mat-icon>
+    </button>
+  </div>
+  <div class="content-img">
+    <img src="../../../assets/images/bargraph1.gif" alt="" />
+  </div>
+</div>
+<div class="content-down">
+  <div class="content-down-graph">
+    <h1>GRAPHS</h1>
+    <img src="../../../assets/images/graph.gif" alt="" />
+    <p>
+      Using the graph representation is used to describe the across any
+      scientific and industrial field where complex information is used
+    </p>
+  </div>
+  <div class="content-down-chart">
+    <h1>PIE-CHART</h1>
+    <img src="../../../assets/images/chart.gif" alt="" />
+    <p>
+      A pie chart is a circular statistical graphic, which is divided into
+      slices to illustrate numerical proportion.The arc length of each slice is
+      proportional to the quantity it represents.
+    </p>
+  </div>
+  <br />
+</div>
+<div class="content-down">
+  <div class="content-down-pargraph">
+    <h1>BAR GRAPH</h1>
+    <img src="../../../assets/images/bargraph.jpeg" alt="" />
+    <p>
+      It gives pictorial representation of data in the form of vertical or
+      horizontal rectangular bars, where the length of bars are proportional to
+      the measure of data.
+    </p>
+  </div>
+</div>
+<div class="card-header content-down">
+    <h1>DASHBOARD ACCESS</h1>
+</div>
+<div class="cards">
+  <mat-card class="module-card" *ngFor="let content of cardContents">
+    <mat-card-title>{{ content.title }}</mat-card-title>
+    <mat-icon>{{ content.icon }}</mat-icon>
+    <mat-card-content>
+      <p>{{ content.content }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button class="card-login">
+        {{ login }} <mat-icon>east</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

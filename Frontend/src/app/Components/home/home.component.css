@@ -1,0 +1,92 @@
+.content-main {
+  display: flex;
+  /* background-image:url( ../../../assets/images/bg.png) ; */
+  justify-content: center;
+  height: 100%;
+}
+.content-title {
+  width: 700px;
+  margin: 200px 0px;
+}
+.content-title h1 {
+  font-size: 60px;
+  font-weight: 900;
+  color: rgb(79, 7, 146);
+}
+.content-title p {
+  font-size: 22px;
+  color: rgb(29, 5, 51);
+}
+.calToAct {
+  background-color: rgb(24, 3, 41);
+  padding: 3px 15px;
+  border-radius: 0;
+  color: white;
+  font-size: 16px;
+  margin-top: 45px;
+  transition: all.7s;
+}
+.calToAct:hover {
+  padding-right: 26px;
+}
+.content-img img {
+  margin-top: 80px;
+  height: 500px;
+  border-radius: 8px;
+}
+.content-down {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(188, 123, 241, 0.041);
+}
+.content-down img {
+  height: 400px;
+  border-radius: 8px;
+  margin-inline: 100px;
+  margin-top: 20px;
+}
+.content-down h1 {
+  color: rgb(79, 7, 146);
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+}
+.content-down p {
+  color: rgb(29, 5, 51);
+  margin: 20px 140px;
+  text-align: center;
+}
+.content-down-pargraph {
+  margin-top: 60px;
+}
+.card-header h1{
+    margin-top: 6rem;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.module-card {
+  margin: 40px;
+  width: 23rem;
+  text-align: center;
+  height: 15rem;
+  background-color: rgb(79, 7, 146);
+  color: rgb(224, 223, 223);
+}
+.module-card mat-icon {
+  height: 60px;
+  width: 60px;
+  font-size: 60px;
+}
+.card-login mat-icon {
+    margin-left: 4px;
+  height: 25px;
+  width: 25px;
+  font-size: 25px;
+  background-color: rgb(24, 3, 41);
+}
+mat-card-actions button {
+  background-color: rgb(24, 3, 41);
+}
