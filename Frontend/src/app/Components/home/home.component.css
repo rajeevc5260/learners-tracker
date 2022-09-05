@@ -56,11 +56,11 @@
   margin: 20px 140px;
   text-align: center;
 }
-.content-down-pargraph {
+.content-down-bargraph {
   margin-top: 60px;
 }
-.card-header h1{
-    margin-top: 6rem;
+.card-header h1 {
+  margin-top: 6rem;
 }
 .cards {
   display: flex;
@@ -75,13 +75,17 @@
   background-color: rgb(79, 7, 146);
   color: rgb(224, 223, 223);
 }
+.module-card mat-card-title {
+  margin-top: 50px;
+  font-size: 30px;
+}
 .module-card mat-icon {
   height: 60px;
   width: 60px;
   font-size: 60px;
 }
 .card-login mat-icon {
-    margin-left: 4px;
+  margin-left: 4px;
   height: 25px;
   width: 25px;
   font-size: 25px;
