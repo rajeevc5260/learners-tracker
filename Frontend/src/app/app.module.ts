@@ -11,13 +11,15 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
+import { DashboardHeaderComponent } from './Components/dashboard-header/dashboard-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardHeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+mat-toolbar {
+  background-color: rgb(79, 7, 146);
+}
+.header .logo {
+  height: 36px;
+  margin-left: 30px;
+  border-radius: 3px;
+}
+.header span {
+  font-size: 20px;
+  color: rgb(222, 223, 224);
+  padding-left: 10px;
+}
+.header a {
+  background-color: rgb(54, 9, 92);
+  color: white;
+  transition: all.3s;
+  margin-right: 30px;
+}
+.header a:hover {
+  background-color: rgb(58, 11, 97);
+}
+.header-space-btw {
+  flex: 1 1 auto;
+}
