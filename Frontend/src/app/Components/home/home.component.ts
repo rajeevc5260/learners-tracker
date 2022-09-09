@@ -12,9 +12,9 @@ export class HomeComponent implements OnInit {
   assign new task, place the candidate according to their perfomance.`;
   login = 'LOGIN';
   cardContents = [
-    {'title':'Admin', 'icon':'admin_panel_settings' ,'content':'Only access to super admin'},
-    {'title':'Training Head', 'icon':'supervisor_account' ,'content':'Access enabled for training Head'},
-    {'title':'PLacement Officer', 'icon':'supervised_user_circle' ,'content':'Access enabled for placement officer'}
+    {'title':'ADMIN', 'icon':'admin_panel_settings'},
+    {'title':'TRAINING HEAD', 'icon':'supervisor_account'},
+    {'title':'PLACEMENT OFFICER', 'icon':'supervised_user_circle'}
   ];
   constructor() {}
 
