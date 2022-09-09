@@ -1,0 +1,25 @@
+
+.sign-main{
+    height: 100%;
+    background-image: url(../../../assets/images/bg.png);
+}
+form{
+    padding: 10% 5%;
+    border-radius: 6px;
+    text-align: center;
+}
+form input{
+    height: 50px;
+    margin-left: 50px;
+}
+.avatar{
+    font-size: 100px;
+    width: auto;
+    height: auto;
+    color:rgb(54, 9, 92);
+}
+.signbtn{
+    background-color:rgb(54, 9, 92) ;
+    color:#fff;
+    padding: 5px 20px;
+}

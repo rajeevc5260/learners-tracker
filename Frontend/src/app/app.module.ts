@@ -12,6 +12,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { DashboardHeaderComponent } from './Components/dashboard-header/dashboard-header.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DashboardHeaderComponent } from './Components/dashboard-header/dashboar
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    DashboardHeaderComponent
+    DashboardHeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
