@@ -1,5 +1,6 @@
 <mat-sidenav-container>
     <button
+    class="menubtn"
     mat-icon-button
     *ngIf="sidenav.mode === 'over'"
     (click)="sidenav.toggle()"
@@ -7,23 +8,23 @@
     <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
     <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
   </button>
-    <mat-sidenav mode="over" #sidenav="matSidenav" class="sidenav">
+    <mat-sidenav mode="over" #sidenav="matSidenav" class="sidenav" >
       <button mat-button class="menu-button" routerLink="/home">
-        <mat-icon>home</mat-icon>
-        <span routerLink="home">Home</span>
+        <mat-icon>dashboard</mat-icon>
+        <span routerLink="home">Dashboard</span>
       </button>
       <button mat-button class="menu-button" routerLink="/home">
-        <mat-icon>send</mat-icon>
-        <span>Discover</span>
+        <mat-icon>text_snippet</mat-icon>
+        <span>Reports</span>
       </button>
       <button mat-button class="menu-button" routerLink="/home">
-        <mat-icon>events</mat-icon>
-        <span>home</span>
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span>Panel Settings</span>
       </button>
       <mat-divider></mat-divider>
       <!-- dividing line -->
       
-      <span class="sidenav-sub-head">Explore groups</span>
+      <span class="sidenav-sub-head">More Settings</span>
       <button mat-button class="menu-button" routerLink="/home">
         <mat-icon>play_arrow</mat-icon>
         <span>home</span>

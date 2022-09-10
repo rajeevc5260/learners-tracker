@@ -5,9 +5,14 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 @Component({
   selector: 'app-dashboard-sidenav',
   templateUrl: './dashboard-sidenav.component.html',
-  styleUrls: ['./dashboard-sidenav.component.css']
+  styleUrls: ['./dashboard-sidenav.component.css'],
 })
 export class DashboardSidenavComponent implements OnInit {
+  sideNavItems = [
+    { icon: 'dashboard', title: 'Dashboard' },
+    { icon: 'dashboard', title: 'Dashboard' },
+    { icon: 'dashboard', title: 'Dashboard' },
+  ];
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
