@@ -7,12 +7,16 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
-import { MatButtonModule } from "@angular/material/button";
-import { MatCardModule } from "@angular/material/card";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { DashboardHeaderComponent } from './Components/dashboard-header/dashboard-header.component';
 import { LoginComponent } from './Components/login/login.component';
+import { DashboardSidenavComponent } from './Components/dashboard-sidenav/dashboard-sidenav.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { DashboardContentComponent } from './Components/dashboard-content/dashboard-content.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { LoginComponent } from './Components/login/login.component';
     FooterComponent,
     HomeComponent,
     DashboardHeaderComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardSidenavComponent,
+    DashboardContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +36,11 @@ import { LoginComponent } from './Components/login/login.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatDividerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

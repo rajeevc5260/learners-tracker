@@ -1,0 +1,44 @@
+<mat-sidenav-container>
+    <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+    <mat-sidenav mode="over" #sidenav="matSidenav" class="sidenav">
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>home</mat-icon>
+        <span routerLink="home">Home</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>send</mat-icon>
+        <span>Discover</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>events</mat-icon>
+        <span>home</span>
+      </button>
+      <mat-divider></mat-divider>
+      <!-- dividing line -->
+      
+      <span class="sidenav-sub-head">Explore groups</span>
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>play_arrow</mat-icon>
+        <span>home</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>play_arrow</mat-icon>
+        <span>home</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>play_arrow</mat-icon>
+        <span>home</span>
+      </button>
+     
+    </mat-sidenav>
+  
+    <app-dashboard-content></app-dashboard-content>
+    
+  </mat-sidenav-container>

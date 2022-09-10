@@ -1,0 +1,10 @@
+.content {
+  margin: 30px;
+  margin-left: 60px;
+  display: flex;
+  height: calc(100vh - 270px);
+  /* justify-content: center;
+      align-items: center; */
+  background-size: cover;
+  border-radius: 5px;
+}

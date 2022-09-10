@@ -1,0 +1,39 @@
+.sidenav button {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-top: 10px;
+  }
+  .sidenav mat-divider {
+    margin: 20px;
+  }
+  .sidenav mat-icon {
+    font-size: 20px;
+    color: rgb(189, 189, 189);
+  }
+  .sidenav span {
+    padding-left: 8px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .sidenav-sub-head{
+      margin: 10px;
+  }
+  
+  mat-sidenav {
+    margin: 30px;
+    width: 280px;
+    border-right: none;
+    /* background-color: rgb(68, 3, 121); */
+    background-color: #673ab7;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+  }
+  
+  mat-sidenav-container {
+    height: 100%;
+    background-color: #e0e0e0;
+  }
+  
