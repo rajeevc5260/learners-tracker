@@ -1,15 +1,7 @@
-.sign-main {
-  height: 100%;
-  background-image: url(../../../assets/images/bg.png);
-}
-form {
-  padding: 10% 5%;
-  border-radius: 6px;
-  text-align: center;
-}
-form input {
-  height: 50px;
-  margin-left: 50px;
+.login-frm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .avatar {
   font-size: 100px;
@@ -17,11 +9,25 @@ form input {
   height: auto;
   color: rgb(54, 9, 92);
 }
-.signbtn {
-  background-color: rgb(54, 9, 92);
+form {
+  background-image: url(../../../assets/images/bg.png);
+  padding: 90px 190px;
+  border-radius: 5px;
+  text-align: center;
+}
+small {
+  color: rgb(206, 5, 5);
+  font-weight: 600;
+}
+button {
+  background-color: rgb(43, 7, 77);
   color: #fff;
-  padding: 5px 20px;
+  padding: 5px 30px;
+}
+button:hover {
+  background-color: rgb(49, 6, 88);
+  color: aliceblue;
 }
 button[disabled] {
-  background-color: rgb(117, 117, 117);
+  background-color: rgb(43, 7, 77);
 }

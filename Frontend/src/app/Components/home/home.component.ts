@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +18,13 @@ export class HomeComponent implements OnInit {
     {'title':'TRAINING HEAD', 'icon':'supervisor_account'},
     {'title':'PLACEMENT OFFICER', 'icon':'supervised_user_circle'}
   ];
-  constructor() {}
+ 
 
+  constructor(private dialogePopUp: MatDialog) {}
+  
+  logOpen() {
+    this.dialogePopUp.open(LoginComponent);
+  }
   ngOnInit(): void {
   }
 }
