@@ -20,6 +20,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { DashboardContentComponent } from './Components/dashboard-content/dashboard-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LearnersAnalyticsComponent } from './Components/learners-analytics/learners-analytics.component';
+import { AdminSettingsComponent } from './Components/admin-settings/admin-settings.component';
+import { PlacementsComponent } from './Components/placements/placements.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     DashboardSidenavComponent,
     DashboardContentComponent,
+    LearnersAnalyticsComponent,
+    AdminSettingsComponent,
+    PlacementsComponent,
   ],
   imports: [
     BrowserModule,

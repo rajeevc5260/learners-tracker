@@ -1,5 +1,5 @@
-<mat-sidenav-container>
-  <button
+<app-dashboard-header></app-dashboard-header>
+<button
     class="menubtn"
     mat-icon-button
     *ngIf="sidenav.mode === 'over'"
@@ -8,6 +8,7 @@
     <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
     <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
   </button>
+<mat-sidenav-container>
   <mat-sidenav mode="over" #sidenav="matSidenav" class="sidenav">
     <div class="profile">
       <i class="fa-solid fa-user"></i>
@@ -18,23 +19,28 @@
       <mat-icon>dashboard</mat-icon>
       <span routerLink="home">Dashboard</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="learnersAnalytics">
       <mat-icon>text_snippet</mat-icon>
-      <span>Reports</span>
+      <span>Learners Analytics</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="adminSettings">
       <mat-icon>admin_panel_settings</mat-icon>
       <span>Admin Settings</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="placements">
       <mat-icon>analytics</mat-icon>
-      <span>Analytics</span>
+      <span>Placements</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="">
       <mat-icon>logout</mat-icon>
       <span>Logout</span>
     </button>
   </mat-sidenav>
-
-  <app-dashboard-content></app-dashboard-content>
+  <mat-sidenav-content class="content-hero" style="margin-left: 0px">
+    <div class="content mat-elevation-z4">
+      <div class="content-head">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
 </mat-sidenav-container>
