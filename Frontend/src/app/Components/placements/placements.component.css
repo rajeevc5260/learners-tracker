@@ -25,19 +25,18 @@ th {
   text-align: left;
   padding: 8px;
 }
-
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-.search{
-    background-color: rgb(92, 14, 180);
-  color: #fff; 
+.search {
+  background-color: rgb(92, 14, 180);
+  color: #fff;
 }
 .update {
   background-color: rgb(92, 14, 180);
   color: #fff;
   margin-top: 25px;
-  margin-left:45%;
+  margin-left: 45%;
 }
 mat-icon {
   color: #dddddd;

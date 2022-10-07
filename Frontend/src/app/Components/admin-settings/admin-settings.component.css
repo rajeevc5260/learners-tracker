@@ -1,0 +1,27 @@
+.head h1 {
+    color: rgb(59, 5, 146);
+    font-weight: 900;
+    text-align: center;
+    margin-top: 30px;
+}
+.registerForms{
+    display: flex;
+}
+form{
+    margin-inline: 80px;
+    margin-top: 8%;
+}
+form h2{
+    color:rgb(66, 11, 156);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+form input{
+    width: 350px;
+    height: 50px;
+}
+
+.add{
+    color: #fff;
+    background-color:rgb(59, 5, 146) ;
+}
