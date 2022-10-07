@@ -9,9 +9,12 @@
   height: auto;
   color: rgb(54, 9, 92);
 }
+input{
+  width:300px
+}
 form {
   background-image: url(../../../assets/images/bg.png);
-  padding: 90px 190px;
+  padding: 90px 120px;
   border-radius: 5px;
   text-align: center;
 }
