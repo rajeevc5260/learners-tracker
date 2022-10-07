@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LearnerUpdateComponent } from '../learner-update/learner-update.component';
 
 @Component({
   selector: 'app-learners-analytics',
@@ -7,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LearnersAnalyticsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private dialogePopUp:MatDialog) { }
+  updateOpen() {
+    this.dialogePopUp.open(LearnerUpdateComponent);
+  }
   ngOnInit(): void {
   }
 

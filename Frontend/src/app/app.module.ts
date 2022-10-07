@@ -23,6 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LearnersAnalyticsComponent } from './Components/learners-analytics/learners-analytics.component';
 import { AdminSettingsComponent } from './Components/admin-settings/admin-settings.component';
 import { PlacementsComponent } from './Components/placements/placements.component';
+import { AddCandidatesComponent } from './Components/add-candidates/add-candidates.component';
+import { LearnerUpdateComponent } from './Components/learner-update/learner-update.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { PlacementsComponent } from './Components/placements/placements.componen
     LearnersAnalyticsComponent,
     AdminSettingsComponent,
     PlacementsComponent,
+    AddCandidatesComponent,
+    LearnerUpdateComponent,
   ],
   imports: [
     BrowserModule,

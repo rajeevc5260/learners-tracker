@@ -8,6 +8,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { DashboardSidenavComponent } from './Components/dashboard-sidenav/dashboard-sidenav.component';
 import { AdminSettingsComponent } from './Components/admin-settings/admin-settings.component';
 import { PlacementsComponent } from './Components/placements/placements.component';
+import { AddCandidatesComponent } from './Components/add-candidates/add-candidates.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,9 +17,10 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardSidenavComponent,
     children: [
-      { path: 'learnersAnalytics', component: LearnersAnalyticsComponent },
+      { path: 'learnersAnalytics', component: LearnersAnalyticsComponent, children:[{path: 'addCandidates', component:AddCandidatesComponent}] },
       { path: 'adminSettings', component: AdminSettingsComponent },
       { path: 'placements', component: PlacementsComponent },
+      
     ],
   },
 ];
