@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AddCandidatesComponent } from '../add-candidates/add-candidates.component';
 import { LearnerUpdateComponent } from '../learner-update/learner-update.component';
 
 @Component({
@@ -13,6 +14,11 @@ export class LearnersAnalyticsComponent implements OnInit {
   updateOpen() {
     this.dialogePopUp.open(LearnerUpdateComponent);
   }
+
+  addOpen(){
+    this.dialogePopUp.open(AddCandidatesComponent);
+  }
+  
   ngOnInit(): void {
   }
 

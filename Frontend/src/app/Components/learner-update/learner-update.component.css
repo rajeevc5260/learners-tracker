@@ -1,0 +1,31 @@
+.update-frm{
+    padding: 16px  100px;
+}
+input{
+    width: 400px;
+}
+.update-frm h1{
+    text-align: center;
+    color:rgb(57, 10, 110) ;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+label{
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+.update{
+    background-color: rgb(92, 14, 180);
+    color: #fff;
+    padding: 0px 25px;
+}
+
+
+
+
+
+
+
+
+
+

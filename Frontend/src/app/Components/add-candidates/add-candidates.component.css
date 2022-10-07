@@ -1,0 +1,28 @@
+.addfrm{
+    padding: 70px  100px;
+}
+input{
+    width: 400px;
+    margin-bottom: 20px;
+}
+.addfrm h1{
+    text-align: center;
+    color:rgb(57, 10, 110) ;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.addbtn{
+    background-color: rgb(92, 14, 180);
+    color: #fff;
+    padding: 0px 25px;
+}
+
+
+
+
+
+
+
+
+
+
