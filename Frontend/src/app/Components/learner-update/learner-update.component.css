@@ -6,11 +6,12 @@ input{
 }
 .update-frm h1{
     text-align: center;
-    color:rgb(57, 10, 110) ;
+    color:rgb(59, 5, 146) ;
     font-weight: 700;
     padding-bottom: 20px;
 }
 label{
+    color: rgb(129, 129, 129);
     font-weight: 600;
     padding-bottom: 3px;
 }
