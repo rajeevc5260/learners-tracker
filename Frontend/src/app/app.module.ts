@@ -25,6 +25,7 @@ import { AdminSettingsComponent } from './Components/admin-settings/admin-settin
 import { PlacementsComponent } from './Components/placements/placements.component';
 import { AddCandidatesComponent } from './Components/add-candidates/add-candidates.component';
 import { LearnerUpdateComponent } from './Components/learner-update/learner-update.component';
+import { UploadFileComponent } from './Components/upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LearnerUpdateComponent } from './Components/learner-update/learner-upda
     PlacementsComponent,
     AddCandidatesComponent,
     LearnerUpdateComponent,
+    UploadFileComponent,
   ],
   imports: [
     BrowserModule,

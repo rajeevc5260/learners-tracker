@@ -1,0 +1,49 @@
+
+.head h3 {
+    color: rgb(59, 5, 146);
+    font-weight: 900;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .filter {
+    display: flex;
+    justify-content: center;
+  }
+  .filter select {
+    margin-inline: 30px;
+    width: 150px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 7px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .update {
+    background-color: rgb(92, 14, 180);
+    color: #fff;
+  }
+  .delete {
+    background-color: rgb(212, 7, 7);
+    color: #fff;
+  }
+  mat-icon {
+    color: #dddddd;
+  }
+  .addbtn{
+      float: right;
+      background-color: rgb(92, 14, 180);
+      color: #fff;
+      margin-top: 20px;
+  }
+  

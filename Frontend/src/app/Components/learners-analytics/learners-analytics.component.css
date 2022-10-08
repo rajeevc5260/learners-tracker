@@ -40,9 +40,11 @@ tr:nth-child(even) {
 mat-icon {
   color: #dddddd;
 }
-.addbtn{
-    float: right;
-    background-color: rgb(92, 14, 180);
-    color: #fff;
-    margin-top: 20px;
+.addbtn {
+  float: right;
+  background-color: rgb(92, 14, 180);
+  color: #fff;
+  margin-top: 20px;
+  margin-inline: 10px;
+  font-size: 16px;
 }
