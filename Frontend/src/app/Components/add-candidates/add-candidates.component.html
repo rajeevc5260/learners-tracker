@@ -1,21 +1,21 @@
 <div class="addfrm">
     <h1>ADD CANDIDATE</h1>
-    <form>
+    <form #learnersDetails="ngForm">
         <div class="mb-3">
-           <input type="text" class="form-control" placeholder="Learner ID" required="required">
+           <input type="text" name="learnerId" [(ngModel)]="learnerDetails.learnerId" class="form-control" placeholder="Learner ID" required="required">
         </div>
         <div class="mb-3">
-           <input type="text" class="form-control" placeholder="Name" required="required">
+           <input type="text" name="name" [(ngModel)]="learnerDetails.name" class="form-control" placeholder="Name" required="required">
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Project" required="required">
+            <input type="text"name="project" [(ngModel)]="learnerDetails.project" class="form-control" placeholder="Project" required="required">
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Batch" required="required">
+            <input type="text" name="batch" [(ngModel)]="learnerDetails.batch" class="form-control" placeholder="Batch" required="required">
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Course Status" required="required">
+            <input type="text" name="courseStatus" [(ngModel)]="learnerDetails.courseStatus" class="form-control" placeholder="Course Status" required="required">
         </div>
-        <button class="addbtn" mat-button>ADD</button>
+        <button class="addbtn" mat-button (click)="addLearner()">ADD</button>
     </form>
 </div>

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = "mongodb://localhost:27017/LearnerTracker";
+const db = "mongodb+srv://rajeevc:rajeev321@cluster0.w68gpom.mongodb.net/LearnerTracker";
 
 mongoose.connect(db, (err) => {
   if (err) {

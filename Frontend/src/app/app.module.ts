@@ -9,6 +9,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -56,6 +57,7 @@ import { UploadFileComponent } from './Components/upload-file/upload-file.compon
     MatSidenavModule,
     MatDividerModule,
     FormsModule,
+    HttpClientModule,
     MatDialogModule
   ],
   providers: [],
