@@ -7,9 +7,9 @@
     <form action="">
       <table>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Password</th>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>PASSWORD</th>
         </tr>
         <tr>
           <td>sldfhkjsdfh</td>
@@ -30,15 +30,19 @@
     <form action="">
       <table>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Password</th>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>PASSWORD</th>
         </tr>
         <tr>
           <td>wefewrtrew</td>
           <td>retgre</td>
           <td>retretretrsdfddsfsdfds</td>
-          <button class="update" mat-button (click)="placementOfficerUpdateFrmOpen()">
+          <button
+            class="update"
+            mat-button
+            (click)="placementOfficerUpdateFrmOpen()"
+          >
             <mat-icon>update</mat-icon> UPDATE
           </button>
           <button class="delete" mat-button>
@@ -49,8 +53,12 @@
     </form>
   </div>
   <div class="addButtons">
-    <button class="add" mat-button (click)="trainerFrmOpen()">Add Trainer Head</button>
-    <button class="add" mat-button (click)="placementOfficerFrmOpen()">Add Placement Officer</button>
+    <button class="add" mat-button (click)="trainerFrmOpen()">
+      Add Trainer Head
+    </button>
+    <button class="add" mat-button (click)="placementOfficerFrmOpen()">
+      Add Placement Officer
+    </button>
   </div>
 </div>
 <router-outlet></router-outlet>

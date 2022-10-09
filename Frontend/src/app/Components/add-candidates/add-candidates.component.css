@@ -16,8 +16,10 @@ input{
     color: #fff;
     padding: 0px 25px;
 }
-
-
+select,
+option{
+    color: rgb(107, 107, 107);
+}
 
 
 

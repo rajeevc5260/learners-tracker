@@ -8,13 +8,30 @@
            <input type="text" name="name" [(ngModel)]="learnerDetails.name" class="form-control" placeholder="Name" required="required">
         </div>
         <div class="mb-3">
-            <input type="text"name="project" [(ngModel)]="learnerDetails.project" class="form-control" placeholder="Project" required="required">
+            <select class="form-select" name="project" [(ngModel)]="learnerDetails.project">
+                <option selected>Project</option>
+                <option value="ICTAK">ICTAK</option>
+                <option value="KKEM">KKEM</option>
+                <option value="NORKA">NORKA</option>
+                <option value="ABCD">ABCD</option>
+                <option value="KDISC">KDISC</option>
+            </select>
         </div>
         <div class="mb-3">
-            <input type="text" name="batch" [(ngModel)]="learnerDetails.batch" class="form-control" placeholder="Batch" required="required">
+            <select class="form-select" name="batch" [(ngModel)]="learnerDetails.batch">
+                <option selected>Batch</option>
+                <option value="May 22">MAY 22</option>
+                <option value="Jun 22">JUN 22</option>
+                <option value="Jul 22">JUL 22</option>
+                <option value="Aug 22">AUG 22</option>
+            </select>
         </div>
         <div class="mb-3">
-            <input type="text" name="courseStatus" [(ngModel)]="learnerDetails.courseStatus" class="form-control" placeholder="Course Status" required="required">
+            <select class="form-select" name="courseStatus" [(ngModel)]="learnerDetails.courseStatus">
+                <option selected>Course Status</option>
+                <option value="Qualified">Qualified</option>
+                <option value="Incompetent">Incompetent</option>
+            </select>
         </div>
         <button class="addbtn" mat-button (click)="addLearner()">ADD</button>
     </form>

@@ -10,9 +10,9 @@ export class AddCandidatesComponent implements OnInit {
   learnerDetails = {
     learnerId: '',
     name: '',
-    project: '',
-    batch: '',
-    courseStatus: '',
+    project: 'Project',
+    batch: 'Batch',
+    courseStatus: 'Course Status',
   };
   constructor(private addLearnerServices: LearnersDataService) {}
 
