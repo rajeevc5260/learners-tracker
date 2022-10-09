@@ -7,6 +7,8 @@ import { DashboardSidenavComponent } from './Components/dashboard-sidenav/dashbo
 import { AdminSettingsComponent } from './Components/admin-settings/admin-settings.component';
 import { PlacementsComponent } from './Components/placements/placements.component';
 import { DashboardContentComponent } from './Components/dashboard-content/dashboard-content.component';
+import { AddTrainerheadComponent } from './Components/add-trainerhead/add-trainerhead.component';
+import { AddPlacementofficerComponent } from './Components/add-placementofficer/add-placementofficer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,11 +17,18 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardSidenavComponent,
     children: [
-      { path: 'dashboardContent', component: DashboardContentComponent},
-      { path: 'learnersAnalytics', component: LearnersAnalyticsComponent},
-      { path: 'adminSettings', component: AdminSettingsComponent },
+      { path: 'dashboardContent', component: DashboardContentComponent },
+      { path: 'learnersAnalytics', component: LearnersAnalyticsComponent },
+      {
+        path: 'adminSettings',
+        component: AdminSettingsComponent,
+        children: [
+          { path: 'tarinerHeadFrm', component: AddTrainerheadComponent },
+          { path: 'placementOfficerFrm', component: AddPlacementofficerComponent },
+
+        ],
+      },
       { path: 'placements', component: PlacementsComponent },
-      
     ],
   },
 ];

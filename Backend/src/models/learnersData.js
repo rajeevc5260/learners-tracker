@@ -11,6 +11,7 @@ const learnersDataSchema = new Schema({
   project: String,
   batch: String,
   courseStatus: String,
+  placementStatus: String,
 });
 
 const learnersData = mongoose.model("learnersDetails", learnersDataSchema);

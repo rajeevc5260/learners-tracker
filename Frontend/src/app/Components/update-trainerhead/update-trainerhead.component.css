@@ -1,0 +1,20 @@
+
+.trainerHead-Frm {
+  margin-inline: 80px;
+}
+
+.trainerHead-Frm h2 {
+  color: rgb(66, 11, 156);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.trainerHead-Frm input {
+  width: 350px;
+  height: 50px;
+}
+
+.add {
+  color: #fff;
+  background-color: rgb(59, 5, 146);
+}

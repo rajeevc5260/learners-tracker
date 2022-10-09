@@ -1,27 +1,49 @@
+.adminSettings {
+  margin-left: 100px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 10%;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px 40px;
+}
+.update {
+  background-color: rgb(92, 14, 180);
+  color: #fff;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+.delete {
+  background-color: rgb(212, 7, 7);
+  color: #fff;
+}
+mat-icon {
+  color: #dddddd;
+}
+.Admins-details h2 {
+  color: rgb(59, 5, 146);
+  font-weight: 900;
+  text-align: center;
+  margin-top: 30px;
+}
 .head h1 {
-    color: rgb(59, 5, 146);
-    font-weight: 900;
-    text-align: center;
-    margin-top: 30px;
+  color: rgb(59, 5, 146);
+  font-weight: 900;
+  text-align: center;
+  margin-top: 30px;
 }
-.registerForms{
-    display: flex;
+.addButtons {
+  float: right;
+  margin-top: 34px;
 }
-form{
-    margin-inline: 80px;
-    margin-top: 8%;
-}
-form h2{
-    color:rgb(66, 11, 156);
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-form input{
-    width: 350px;
-    height: 50px;
-}
-
-.add{
-    color: #fff;
-    background-color:rgb(59, 5, 146) ;
+.add {
+  color: #fff;
+  background-color: rgb(59, 5, 146);
+  margin-inline: 15px;
 }

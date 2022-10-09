@@ -55,6 +55,14 @@ app.post("/addData", (req, res) => {
   });
 });
 
+// Read learners Details in Analytics
+app.get('/learnerAnalytics',(req,res)=>{
+  learnersData.find().then((addLearnerData) => {
+    res.send(addLearnerData);
+  });
+})
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

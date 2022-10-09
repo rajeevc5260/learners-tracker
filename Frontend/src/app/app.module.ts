@@ -27,6 +27,10 @@ import { PlacementsComponent } from './Components/placements/placements.componen
 import { AddCandidatesComponent } from './Components/add-candidates/add-candidates.component';
 import { LearnerUpdateComponent } from './Components/learner-update/learner-update.component';
 import { UploadFileComponent } from './Components/upload-file/upload-file.component';
+import { AddPlacementofficerComponent } from './Components/add-placementofficer/add-placementofficer.component';
+import { AddTrainerheadComponent } from './Components/add-trainerhead/add-trainerhead.component';
+import { UpdateTrainerheadComponent } from './Components/update-trainerhead/update-trainerhead.component';
+import { UpdatePlacementofficerComponent } from './Components/update-placementofficer/update-placementofficer.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,10 @@ import { UploadFileComponent } from './Components/upload-file/upload-file.compon
     AddCandidatesComponent,
     LearnerUpdateComponent,
     UploadFileComponent,
+    AddPlacementofficerComponent,
+    AddTrainerheadComponent,
+    UpdateTrainerheadComponent,
+    UpdatePlacementofficerComponent,
   ],
   imports: [
     BrowserModule,
