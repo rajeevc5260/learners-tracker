@@ -30,87 +30,12 @@
         <th>COURSE STATUS</th>
         <th>PLACEMENT STATUS</th>
       </tr>
-      <tr>
-        <td>1001</td>
-        <td>Maria Anders</td>
-        <td>ICTAK</td>
-        <td>May 22</td>
-        <td>Qualified</td>
-        <td>
-          <select class="form-select">
-            <option selected>Select</option>
-            <option>Placed</option>
-            <option>Job Seeking</option>
-            <option>Not Interested</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>1001</td>
-        <td>Francisco Chang</td>
-        <td>KKEM</td>
-        <td>June 22</td>
-        <td>Incompetent</td>
-        <td>
-          <select class="form-select">
-            <option selected>Select</option>
-            <option>Placed</option>
-            <option>Job Seeking</option>
-            <option>Not Interested</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>1002</td>
-        <td>Roland Mendel</td>
-        <td>NORKA</td>
-        <td>July 22</td>
-        <td>Qualified</td>
-        <td>
-          <select class="form-select">
-            <option selected>Select</option>
-            <option>Placed</option>
-            <option>Job Seeking</option>
-            <option>Not Interested</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>1003</td>
-        <td>Helen Bennett</td>
-        <td>ABCD</td>
-        <td>May 22</td>
-        <td>Incompetent</td>
-        <td>
-          <select class="form-select">
-            <option selected>Select</option>
-            <option>Placed</option>
-            <option>Job Seeking</option>
-            <option>Not Interested</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>1004</td>
-        <td>Yoshi Tannamuri</td>
-        <td>KDISE</td>
-        <td>August 22</td>
-        <td>Incompetent</td>
-        <td>
-          <select class="form-select">
-            <option selected>Select</option>
-            <option>Placed</option>
-            <option>Job Seeking</option>
-            <option>Not Interested</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>1005</td>
-        <td>Giovanni Rovelli</td>
-        <td>KKEM</td>
-        <td>April 22</td>
-        <td>Qualified</td>
+      <tr *ngFor="let learnerData of learnerDatas">
+        <td>{{ learnerData.learnerId }}</td>
+        <td>{{ learnerData.name }}</td>
+        <td>{{ learnerData.project }}</td>
+        <td>{{ learnerData.batch }}</td>
+        <td>{{ learnerData.courseStatus }}</td>
         <td>
           <select class="form-select">
             <option selected>Select</option>

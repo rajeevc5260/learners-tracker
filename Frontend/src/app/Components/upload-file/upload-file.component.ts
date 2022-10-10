@@ -7,11 +7,20 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./upload-file.component.css'],
 })
 export class UploadFileComponent implements OnInit {
+  uploadLearnerFile = {
+    learnerId: '',
+    name: '',
+    project: '',
+    batch: '',
+    courseStatus: '',
+  };
+
   file: any;
   arrayBuffer: any;
   filelist: any;
   constructor() {}
 
+  
   // code for uploading excelSheet to body
   readExcel(event: any) {
     this.file = event.target.files[0];

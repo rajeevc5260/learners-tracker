@@ -3,6 +3,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const adminLogin = require("./src/models/adminLogin");
 const learnersData = require("./src/models/learnersData");
+const placementAuthData = require("./src/models/placementAuth");
+const trainerAuthData = require("./src/models/trainerAuth");
 
 const PORT = 3000;
 const app = express();
@@ -38,6 +40,36 @@ app.post("/login", (req, res) => {
   });
 });
 
+// Insert Data placement officer
+app.post("/addPlacementData", (req, res) => {
+  var placementAuthDetails = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+  };
+  var addPlacementAuthData = placementAuthData(placementAuthDetails);
+  addPlacementAuthData.save();
+
+  placementAuthData.find().then((addPlacementAuthData) => {
+    res.send(addPlacementAuthData);
+  });
+});
+
+// Insert Trainer head
+app.post("/addTrainerHeadData", (req, res) => {
+  var trainerAuthDetails = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+  };
+  var addTrainerAuthData = trainerAuthData(trainerAuthDetails);
+  addTrainerAuthData.save();
+
+  trainerAuthData.find().then((addTrainerAuthData) => {
+    res.send(addTrainerAuthData);
+  });
+});
+
 // insert Single Learners data POST
 app.post("/addData", (req, res) => {
   var learnerDetails = {
@@ -56,12 +88,11 @@ app.post("/addData", (req, res) => {
 });
 
 // Read learners Details in Analytics
-app.get('/learnerAnalytics',(req,res)=>{
+app.get("/learnerAnalytics", (req, res) => {
   learnersData.find().then((addLearnerData) => {
     res.send(addLearnerData);
   });
-})
-
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

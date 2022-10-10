@@ -11,7 +11,7 @@ export class LearnersDataService {
   getLearnerDetails() {
     return this.http.get<any>('http://localhost:3000/learnerAnalytics');
   }
-
+  
   // Add single Candidate
   addLearner(learnersData: any) {
     return this.http.post<any>('http://localhost:3000/addData', learnersData);

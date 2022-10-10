@@ -4,7 +4,7 @@ import { LearnersDataService } from 'src/app/Services/learners-data.service';
 import { AddCandidatesComponent } from '../add-candidates/add-candidates.component';
 import { LearnerUpdateComponent } from '../learner-update/learner-update.component';
 import { UploadFileComponent } from '../upload-file/upload-file.component';
-import { LearnerDataModel } from './learnerData.Model';
+import { LearnerDataModel } from '../../DataModel/learnerData.Model';
 
 @Component({
   selector: 'app-learners-analytics',

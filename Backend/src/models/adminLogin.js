@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const db = "mongodb+srv://rajeevc:rajeev321@cluster0.w68gpom.mongodb.net/LearnerTracker";
+const db =
+  "mongodb+srv://rajeevc:rajeev321@cluster0.w68gpom.mongodb.net/LearnerTracker";
 
 mongoose.connect(db, (err) => {
   if (err) {
@@ -9,10 +10,11 @@ mongoose.connect(db, (err) => {
   }
 });
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 const adminLoginSchema = new Schema({
-    email:String,
-    password:String
-})
+  name: String,
+  email: String,
+  password: String,
+});
 
-module.exports = mongoose.model('admin', adminLoginSchema, 'admins')
+module.exports = mongoose.model("admin", adminLoginSchema, "admins");

@@ -4,6 +4,7 @@ export class LearnerDataModel {
     public name: String,
     public project: String,
     public batch: String,
-    public courseStatus: String
+    public courseStatus: String,
+    public placementStatus: String
   ) {}
 }
