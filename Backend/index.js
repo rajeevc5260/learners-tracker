@@ -94,11 +94,25 @@ app.get("/learnerAnalytics", (req, res) => {
   });
 });
 
+// Read Placement officer Auth 
+app.get("/placementAuthDetails", (req, res) => {
+  placementAuthData.find().then((addPlacementAuthData) => {
+    res.send(addPlacementAuthData);
+  });
+});
+
+// Read Trainer head Auth 
+app.get("/trainerAuthDetails", (req, res) => {
+  trainerAuthData.find().then((addTrainerAuthData) => {
+    res.send(addTrainerAuthData);
+  });
+});
+
 // update to find id
 app.get("/learnerAnalytics/:id", (req, res) => {
   const id = req.params.id;
-  learnersData.findOne({ _id: id }).then((book) => {
-    res.send(book);
+  learnersData.findOne({ _id: id }).then((learner) => {
+    res.send(learner);
   });
 });
 
@@ -151,6 +165,31 @@ app.delete("/remove/:id", (req, res) => {
       res.send("Error in deleting the Learner");
     } else {
       res.json(deleteLearner);
+    }
+  });
+});
+
+
+// DELETE Trainer Auth details Via ID
+app.delete("/trainerRemove/:id", (req, res) => {
+  console.log("Deleting");
+  trainerAuthData.findByIdAndRemove(req.params.id, (err, deletetrainer) => {
+    if (err) {
+      res.send("Error in deleting the Trainer");
+    } else {
+      res.json(deletetrainer);
+    }
+  });
+});
+
+// DELETE placement Officer Via ID
+app.delete("/placementOfficerRemove/:id", (req, res) => {
+  console.log("Deleting");
+  placementAuthData.findByIdAndRemove(req.params.id, (err, deleteplacementOfficer) => {
+    if (err) {
+      res.send("Error in deleting the placementOfficer");
+    } else {
+      res.json(deleteplacementOfficer);
     }
   });
 });

@@ -11,14 +11,14 @@
           <th>EMAIL</th>
           <th>PASSWORD</th>
         </tr>
-        <tr>
-          <td>sldfhkjsdfh</td>
-          <td>sdlkflksdj</td>
-          <td>sdfkjsdhfsdfdfds</td>
+        <tr *ngFor="let trainerAuth of trainerAuthDatas">
+          <td>{{trainerAuth.name}}</td>
+          <td>{{trainerAuth.email}}</td>
+          <td>{{trainerAuth.password}}</td>
           <button class="update" mat-button (click)="trainerUpdateFrmOpen()">
             <mat-icon>update</mat-icon> UPDATE
           </button>
-          <button class="delete" mat-button>
+          <button class="delete" mat-button (click)="deleteTrainer(trainerAuth)">
             <mat-icon>delete</mat-icon> DELETE
           </button>
         </tr>
@@ -34,10 +34,10 @@
           <th>EMAIL</th>
           <th>PASSWORD</th>
         </tr>
-        <tr>
-          <td>wefewrtrew</td>
-          <td>retgre</td>
-          <td>retretretrsdfddsfsdfds</td>
+       <tr *ngFor="let placementAuth of adminAuthDatas">
+          <td>{{placementAuth.name}}</td>
+          <td>{{placementAuth.email}}</td>
+          <td>{{placementAuth.password}}</td>
           <button
             class="update"
             mat-button
@@ -45,7 +45,7 @@
           >
             <mat-icon>update</mat-icon> UPDATE
           </button>
-          <button class="delete" mat-button>
+          <button class="delete" mat-button (click)="deletePlacementOfficer(placementAuth)">
             <mat-icon>delete</mat-icon> DELETE
           </button>
         </tr>
