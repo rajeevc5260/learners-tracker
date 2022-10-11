@@ -1,0 +1,24 @@
+.placement-frm{
+    padding: 16px  100px;
+}
+input{
+    width: 400px;
+}
+.placement-frm h1{
+    text-align: center;
+    color:rgb(59, 5, 146) ;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+label{
+    color: rgb(129, 129, 129);
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+.Add{
+    margin-top: 20px;
+    background-color: rgb(92, 14, 180);
+    color: #fff;
+    padding: 0px 25px;
+}
+

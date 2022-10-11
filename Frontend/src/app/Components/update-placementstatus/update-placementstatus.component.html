@@ -1,5 +1,5 @@
 
-<form class="update-frm">
+<form class="placement-frm">
     <h1>LEARNER UPDATE</h1>
     <div class="mb-3">
         <label>Learner ID</label>
@@ -12,27 +12,41 @@
     <div class="mb-3">
         <label>Project</label>
         <select class="form-select" disabled name="project" [(ngModel)]="learnerDetails.project">
+            <option selected>Project</option>
+            <option value="ICTAK">ICTAK</option>
+            <option value="KKEM">KKEM</option>
+            <option value="NORKA">NORKA</option>
+            <option value="ABCD">ABCD</option>
+            <option value="KDISC">KDISC</option>
         </select>
     </div>
     <div class="mb-3">
         <label>Batch</label>
-        <select class="form-select"disabled name="batch" [(ngModel)]="learnerDetails.batch">
+        <select class="form-select" disabled name="batch" [(ngModel)]="learnerDetails.batch">
+            <option selected>Batch</option>
+            <option value="May 22">MAY 22</option>
+            <option value="Jun 22">JUN 22</option>
+            <option value="Jul 22">JUL 22</option>
+            <option value="Aug 22">AUG 22</option>
         </select>
     </div>
     <div class="mb-3">
         <label>Course Status</label>
         <select class="form-select" disabled name="courseStatus" [(ngModel)]="learnerDetails.courseStatus">
+            <option selected>Course Status</option>
+            <option value="Qualified">Qualified</option>
+            <option value="Incompetent">Incompetent</option>
         </select>    
     </div>
     <div class="mb-3">
-    <select class="form-select" name="placementStatus" [(ngModel)]="learnerDetails.placementStatus">
+        <label>Placement Status</label>
+        <select class="form-select"  name="placementStatus" [(ngModel)]="learnerDetails.placementStatus">
         <option selected>Select</option>
         <option>Placed</option>
         <option>Job Seeking</option>
         <option>Not Interested</option>
     </select>
-    <button (click)="updateLearnerPlacement()">update</button>
-
+    <button class="Add" mat-button (click)="updateLearnerPlacement()">UPDATE</button>
     </div>
 </form>
 
