@@ -1,13 +1,13 @@
 <form class="placementOfficer-Frm">
   <h2>PLACEMENT OFFICER<br>UPDATE</h2>
   <div class="mb-3">
-    <input type="text" class="form-control" placeholder="Name" />
+    <input type="text" name="name" [(ngModel)]="placementOfficerAuthDetails.name" class="form-control" placeholder="Name" />
   </div>
   <div class="mb-3">
-    <input type="email" class="form-control" placeholder="Username" />
+    <input type="email" name="email"  [(ngModel)]="placementOfficerAuthDetails.email" class="form-control" placeholder="Email" />
   </div>
   <div class="mb-3">
-    <input type="password" class="form-control" placeholder="Password" />
+    <input type="password" name="password"  [(ngModel)]="placementOfficerAuthDetails.password" class="form-control" placeholder="Password" />
   </div>
-  <button mat-button mat-dialog-close="true" class="add">UPDATE</button>
+  <button mat-button mat-dialog-close="true" class="add" (click)="updatePlacementOfficer()">UPDATE</button>
 </form>

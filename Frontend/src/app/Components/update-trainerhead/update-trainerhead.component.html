@@ -1,13 +1,13 @@
 <form class="trainerHead-Frm">
   <h2>TRAINER HEAD UPDATE</h2>
   <div class="mb-3">
-    <input type="text" class="form-control" placeholder="Name" />
+    <input type="text" name="name" [(ngModel)]="trainerAuthDetails.name" class="form-control" placeholder="Name" />
   </div>
   <div class="mb-3">
-    <input type="email" class="form-control" placeholder="Username" />
+    <input type="email" name="email" [(ngModel)]="trainerAuthDetails.email" class="form-control" placeholder="Email" />
   </div>
   <div class="mb-3">
-    <input type="password" class="form-control" placeholder="Password" />
+    <input type="password" name="password" [(ngModel)]="trainerAuthDetails.password" class="form-control" placeholder="Password" />
   </div>
-  <button mat-button mat-dialog-close="true" class="add">UPDATE</button>
+  <button mat-button mat-dialog-close="true" class="add" (click)="updateTrainer()">UPDATE</button>
 </form>

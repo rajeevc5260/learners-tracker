@@ -17,11 +17,10 @@ export class LearnersDataService {
     return this.http.post<any>('http://localhost:3000/addData', learnersData);
   }
 
-  // get learner details to update by ID
+  // get learner details to update by ID 
   getlearner(id: any) {
     return this.http.get('http://localhost:3000/learnerAnalytics/' + id);
   }
-
   // update learner
   updateLearner(learner: any) {
     console.log('update');
@@ -31,8 +30,9 @@ export class LearnersDataService {
         console.log(data);
       });
   }
-   // update learner
-   updateLearnerPlacement(learnerPlacement: any) {
+
+  // update learner
+  updateLearnerPlacement(learnerPlacement: any) {
     console.log('update');
     return this.http
       .put('http://localhost:3000/learnerUpdate/', learnerPlacement)

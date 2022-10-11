@@ -3,7 +3,7 @@
     <h1>ADMIN SETTINGS</h1>
   </div>
   <div class="Admins-details">
-    <h2>Trainer Head</h2>
+    <h2>TRAINER HEAD</h2>
     <form action="">
       <table>
         <tr>
@@ -15,7 +15,7 @@
           <td>{{trainerAuth.name}}</td>
           <td>{{trainerAuth.email}}</td>
           <td>{{trainerAuth.password}}</td>
-          <button class="update" mat-button (click)="trainerUpdateFrmOpen()">
+          <button class="update" mat-button (click)="updateTrainer(trainerAuth)">
             <mat-icon>update</mat-icon> UPDATE
           </button>
           <button class="delete" mat-button (click)="deleteTrainer(trainerAuth)">
@@ -26,7 +26,7 @@
     </form>
   </div>
   <div class="Admins-details">
-    <h2>Placement Officers</h2>
+    <h2>PLACEMENT OFFICER</h2>
     <form action="">
       <table>
         <tr>
@@ -41,7 +41,7 @@
           <button
             class="update"
             mat-button
-            (click)="placementOfficerUpdateFrmOpen()"
+            (click)="updatePlacementOfficer(placementAuth)"
           >
             <mat-icon>update</mat-icon> UPDATE
           </button>

@@ -35,17 +35,21 @@ export class AdminSettingsComponent implements OnInit {
   trainerFrmOpen() {
     this.dialogePopUp.open(AddTrainerheadComponent);
   }
-  // trainer head update popup form
-  trainerUpdateFrmOpen() {
-    this.dialogePopUp.open(UpdateTrainerheadComponent);
-  }
   // placement officer add popup form
   placementOfficerFrmOpen() {
     this.dialogePopUp.open(AddPlacementofficerComponent);
   }
-  // placement officer update popup form
-  placementOfficerUpdateFrmOpen() {
+
+  // Update a trainer Details
+  updatePlacementOfficer(placementOfficerData: any) {
+    localStorage.setItem('editPlacementOfficerId', placementOfficerData._id.toString());
     this.dialogePopUp.open(UpdatePlacementofficerComponent);
+  }
+
+  // Update a placement officer Details
+  updateTrainer(trainerData: any) {
+    localStorage.setItem('editTrainerId', trainerData._id.toString());
+    this.dialogePopUp.open(UpdateTrainerheadComponent);
   }
 
   // delete a Trainer

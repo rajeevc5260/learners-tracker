@@ -94,28 +94,28 @@ app.get("/learnerAnalytics", (req, res) => {
   });
 });
 
-// Read Placement officer Auth 
+// Read Placement officer Auth
 app.get("/placementAuthDetails", (req, res) => {
   placementAuthData.find().then((addPlacementAuthData) => {
     res.send(addPlacementAuthData);
   });
 });
 
-// Read Trainer head Auth 
+// Read Trainer head Auth
 app.get("/trainerAuthDetails", (req, res) => {
   trainerAuthData.find().then((addTrainerAuthData) => {
     res.send(addTrainerAuthData);
   });
 });
 
-// update to find id
+
+//get for update to find id
 app.get("/learnerAnalytics/:id", (req, res) => {
   const id = req.params.id;
   learnersData.findOne({ _id: id }).then((learner) => {
     res.send(learner);
   });
 });
-
 // Update learnerAnalytics details
 app.put("/learnerUpdate", (req, res) => {
   var id = req.params.id;
@@ -154,8 +154,74 @@ app.put("/learnerUpdate", (req, res) => {
 });
 
 
+//get for update to find id for trainer
+app.get("/trainerAuth/:id", (req, res) => {
+  const id = req.params.id;
+  trainerAuthData.findOne({ _id: id }).then((trainer) => {
+    res.send(trainer);
+  });
+});
+// Update trainerAuth details
+app.put("/trainerAuthUpdate", (req, res) => {
+  var id = req.params.id;
+  var name = req.params.name;
+  var email = req.params.email;
+  var password = req.params.password;
+  console.log(req.body);
+  (id = req.body._id),
+    (name = req.body.name),
+    (email = req.body.email),
+    (password = req.body.password),
+    trainerAuthData
+      .findByIdAndUpdate(
+        { _id: id },
+        {
+          $set: {
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+          },
+        }
+      )
+      .then(() => {
+        res.send();
+      });
+});
 
 
+//get for update to find id for placement officer
+app.get("/placementOfficerAuth/:id", (req, res) => {
+  const id = req.params.id;
+  placementAuthData.findOne({ _id: id }).then((placementOfficer) => {
+    res.send(placementOfficer);
+  });
+});
+// Update placement officer auth details
+app.put("/placementAuthUpdate", (req, res) => {
+  var id = req.params.id;
+  var name = req.params.name;
+  var email = req.params.email;
+  var password = req.params.password;
+  console.log(req.body);
+  (id = req.body._id),
+    (name = req.body.name),
+    (email = req.body.email),
+    (password = req.body.password),
+    placementAuthData
+      .findByIdAndUpdate(
+        { _id: id },
+        {
+          $set: {
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+          },
+        }
+      )
+      .then(() => {
+        res.send();
+      });
+});
 
 // DELETE learners Details Via ID
 app.delete("/remove/:id", (req, res) => {
@@ -168,7 +234,6 @@ app.delete("/remove/:id", (req, res) => {
     }
   });
 });
-
 
 // DELETE Trainer Auth details Via ID
 app.delete("/trainerRemove/:id", (req, res) => {
@@ -185,13 +250,16 @@ app.delete("/trainerRemove/:id", (req, res) => {
 // DELETE placement Officer Via ID
 app.delete("/placementOfficerRemove/:id", (req, res) => {
   console.log("Deleting");
-  placementAuthData.findByIdAndRemove(req.params.id, (err, deleteplacementOfficer) => {
-    if (err) {
-      res.send("Error in deleting the placementOfficer");
-    } else {
-      res.json(deleteplacementOfficer);
+  placementAuthData.findByIdAndRemove(
+    req.params.id,
+    (err, deleteplacementOfficer) => {
+      if (err) {
+        res.send("Error in deleting the placementOfficer");
+      } else {
+        res.json(deleteplacementOfficer);
+      }
     }
-  });
+  );
 });
 
 // Port where backend Runs

@@ -37,4 +37,32 @@ export class AuthService {
    deleteplacementOfficer(id: any) {
     return this.http.delete('http://localhost:3000/placementOfficerRemove/' + id);
   }
+
+    // get trainer auth details to update by ID
+    getTrainerDetails(id: any) {
+      return this.http.get('http://localhost:3000/trainerAuth/' + id);
+    }
+    // update tariner
+    updateTrainer(trainer: any) {
+      console.log('update');
+      return this.http
+        .put('http://localhost:3000/trainerAuthUpdate/', trainer)
+        .subscribe((data) => {
+          console.log(data);
+        });
+    }
+
+    // get placement officer auth details to update by ID
+    getPlacementOfficerDetails(id: any) {
+      return this.http.get('http://localhost:3000/placementOfficerAuth/' + id);
+    }
+    // update tariner
+    updatePlacementOfficer(placementOfficer: any) {
+      console.log('update');
+      return this.http
+        .put('http://localhost:3000/placementAuthUpdate/', placementOfficer)
+        .subscribe((data) => {
+          console.log(data);
+        });
+    }
 }
