@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LearnersDataService } from 'src/app/Services/learners-data.service';
 import * as XLSX from 'xlsx';
 
 @Component({
@@ -18,7 +19,7 @@ export class UploadFileComponent implements OnInit {
   file: any;
   arrayBuffer: any;
   filelist: any;
-  constructor() {}
+  constructor(private addLearnerServices:LearnersDataService) {}
 
   
   // code for uploading excelSheet to body
@@ -44,4 +45,12 @@ export class UploadFileComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  // add multiple learner function
+  addLearner() {
+    console.log(this.filelist[0]);
+    this.addLearnerServices.addLearner(this.uploadLearnerFile).subscribe((res) => {
+      alert('Candidate details added Sucessfully');
+    });
+  }
 }

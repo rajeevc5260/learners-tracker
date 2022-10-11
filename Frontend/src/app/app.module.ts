@@ -31,6 +31,7 @@ import { AddPlacementofficerComponent } from './Components/add-placementofficer/
 import { AddTrainerheadComponent } from './Components/add-trainerhead/add-trainerhead.component';
 import { UpdateTrainerheadComponent } from './Components/update-trainerhead/update-trainerhead.component';
 import { UpdatePlacementofficerComponent } from './Components/update-placementofficer/update-placementofficer.component';
+import { UpdatePlacementstatusComponent } from './Components/update-placementstatus/update-placementstatus.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { UpdatePlacementofficerComponent } from './Components/update-placementof
     AddTrainerheadComponent,
     UpdateTrainerheadComponent,
     UpdatePlacementofficerComponent,
+    UpdatePlacementstatusComponent,
   ],
   imports: [
     BrowserModule,

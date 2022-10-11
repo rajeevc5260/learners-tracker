@@ -13,21 +13,33 @@ import { LearnerDataModel } from '../../DataModel/learnerData.Model';
 })
 export class LearnersAnalyticsComponent implements OnInit {
   learnerDatas: LearnerDataModel[] = []; // Get for learner model
+  
   constructor(
     private dialogePopUp: MatDialog,
     private learnerServices: LearnersDataService
   ) {}
 
-  // Popup Dialoge Tabs UPDATE/ADD/UPLOAD FILE
-  updateOpen() {
-    this.dialogePopUp.open(LearnerUpdateComponent);
-  }
+  // Popup Dialoge Tabs for /ADD/UPLOAD FILE
   addOpen() {
     this.dialogePopUp.open(AddCandidatesComponent);
   }
   uploadFile() {
     this.dialogePopUp.open(UploadFileComponent);
   }
+
+  // Update a learner Details
+  updateLearner(learnerData: any) {
+    localStorage.setItem('editLearnerId', learnerData._id.toString());
+    this.dialogePopUp.open(LearnerUpdateComponent);
+  }
+
+  // delete a learner
+  deleteLearner(learnerData: any) {
+    this.learnerServices.deleteLearner(learnerData._id).subscribe((data) => {
+      this.learnerDatas = this.learnerDatas.filter((learner) => learner !== learnerData);
+    });
+  }
+
   ngOnInit(): void {
     // Read learners Details
     this.learnerServices.getLearnerDetails().subscribe((data) => {

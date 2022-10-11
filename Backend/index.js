@@ -94,6 +94,68 @@ app.get("/learnerAnalytics", (req, res) => {
   });
 });
 
+// update to find id
+app.get("/learnerAnalytics/:id", (req, res) => {
+  const id = req.params.id;
+  learnersData.findOne({ _id: id }).then((book) => {
+    res.send(book);
+  });
+});
+
+// Update learnerAnalytics details
+app.put("/learnerUpdate", (req, res) => {
+  var id = req.params.id;
+  var learnerId = req.params.learnerId;
+  var name = req.params.name;
+  var project = req.params.project;
+  var batch = req.params.batch;
+  var courseStatus = req.params.courseStatus;
+  var placementStatus = req.params.placementStatus;
+
+  console.log(req.body);
+  (id = req.body._id),
+    (learnerId = req.body.learnerId),
+    (name = req.body.name),
+    (project = req.body.project),
+    (batch = req.body.batch),
+    (courseStatus = req.body.courseStatus),
+    (placementStatus = req.body.placementStatus),
+    learnersData
+      .findByIdAndUpdate(
+        { _id: id },
+        {
+          $set: {
+            learnerId: req.body.learnerId,
+            name: req.body.name,
+            project: req.body.project,
+            batch: req.body.batch,
+            courseStatus: req.body.courseStatus,
+            placementStatus: req.body.placementStatus,
+          },
+        }
+      )
+      .then(() => {
+        res.send();
+      });
+});
+
+
+
+
+
+// DELETE learners Details Via ID
+app.delete("/remove/:id", (req, res) => {
+  console.log("Deleting");
+  learnersData.findByIdAndRemove(req.params.id, (err, deleteLearner) => {
+    if (err) {
+      res.send("Error in deleting the Learner");
+    } else {
+      res.json(deleteLearner);
+    }
+  });
+});
+
+// Port where backend Runs
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

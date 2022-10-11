@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { LearnerDataModel } from 'src/app/DataModel/learnerData.Model';
 import { LearnersDataService } from 'src/app/Services/learners-data.service';
-import { LearnersAnalyticsComponent } from '../learners-analytics/learners-analytics.component';
 
 @Component({
-  selector: 'app-learner-update',
-  templateUrl: './learner-update.component.html',
-  styleUrls: ['./learner-update.component.css']
+  selector: 'app-update-placementstatus',
+  templateUrl: './update-placementstatus.component.html',
+  styleUrls: ['./update-placementstatus.component.css'],
 })
-export class LearnerUpdateComponent implements OnInit {
+export class UpdatePlacementstatusComponent implements OnInit {
   learnerDetails = {
     learnerId: '',
     name: '',
@@ -17,19 +16,17 @@ export class LearnerUpdateComponent implements OnInit {
     courseStatus: '',
     placementStatus: '',
   };
-  constructor(private router: Router, private learnerServices: LearnersDataService) {}
+  constructor(private learnerServices: LearnersDataService) {}
 
   ngOnInit(): void {
+    // update
     let learnerId = localStorage.getItem('editLearnerId');
     this.learnerServices.getlearner(learnerId).subscribe((data) => {
       this.learnerDetails = JSON.parse(JSON.stringify(data));
     });
   }
-
-  updateLearner(){
-    this.learnerServices.updateLearner(this.learnerDetails);
+  updateLearnerPlacement() {
+    this.learnerServices.updateLearnerPlacement(this.learnerDetails);
     alert('updated successfully');
-    this.router.navigate(['learnersAnalytics'])
   }
-
 }

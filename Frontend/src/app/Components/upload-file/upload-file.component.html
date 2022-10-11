@@ -2,7 +2,7 @@
   <h3>UPLOAD FILE</h3>
 </div>
 <div class="learners-details">
-  <form action="">
+  <form action="" #uploadLearnerFiles="ngForm">
     <input
       type="file"
       (change)="readExcel($event)"
@@ -18,13 +18,13 @@
         <th>COURSE STATUS</th>
       </tr>
       <tr *ngFor="let data of filelist[0]">
-        <td>{{ data.LEARNERID }}</td>
-        <td>{{ data.NAME }}</td>
-        <td>{{ data.PROJECT }}</td>
-        <td>{{ data.BATCH }}</td>
-        <td>{{ data.COURSESTATUS }}</td>
+        <td >{{ data.learnerId }}</td>
+        <td >{{ data.name }}</td>
+        <td >{{ data.project }}</td>
+        <td >{{ data.batch }}</td>
+        <td >{{ data.courseStatus }}</td>
       </tr>
     </table>
-    <button class="addbtn" mat-button mat-dialog-close="true">ADD</button>
+    <button class="addbtn" mat-button mat-dialog-close="true" (click)="addLearner()">ADD</button>
   </form>
 </div>

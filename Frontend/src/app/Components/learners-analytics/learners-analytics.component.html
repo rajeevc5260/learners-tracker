@@ -36,12 +36,12 @@
         <td>{{learnerData.batch}}</td>
         <td>{{learnerData.courseStatus}}</td>
         <td>
-          <button class="update" mat-button (click)="updateOpen()">
+          <button class="update" mat-button (click)="updateLearner(learnerData)">
             <mat-icon>update</mat-icon> UPDATE
           </button>
         </td>
         <td>
-          <button class="delete" mat-button>
+          <button class="delete" mat-button (click)="deleteLearner(learnerData)">
             <mat-icon>delete</mat-icon> DELETE
           </button>
         </td>

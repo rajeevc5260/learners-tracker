@@ -35,8 +35,7 @@ tr:nth-child(even) {
 .update {
   background-color: rgb(92, 14, 180);
   color: #fff;
-  margin-top: 25px;
-  margin-left: 45%;
+
 }
 mat-icon {
   color: #dddddd;

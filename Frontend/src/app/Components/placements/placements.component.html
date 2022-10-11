@@ -36,16 +36,10 @@
         <td>{{ learnerData.project }}</td>
         <td>{{ learnerData.batch }}</td>
         <td>{{ learnerData.courseStatus }}</td>
-        <td>
-          <select class="form-select">
-            <option selected>Select</option>
-            <option>Placed</option>
-            <option>Job Seeking</option>
-            <option>Not Interested</option>
-          </select>
-        </td>
+        <td>{{learnerData.placementStatus}}</td>
+        <td><button mat-button class="update" (click)=" updateLearnerPlacement(learnerData)" >CHANGE STATUS</button></td>
       </tr>
     </table>
   </form>
 </div>
-<button mat-button class="update">UPDATE ALL</button>
+
