@@ -13,7 +13,7 @@ export class UpdateTrainerheadComponent implements OnInit {
     email: '',
     password: '',
   };
-  constructor(private router:Router, private authservices: AuthService) {}
+  constructor(private router: Router, private authservices: AuthService) {}
   ngOnInit(): void {
     let trainerId = localStorage.getItem('editTrainerId');
     this.authservices.getTrainerDetails(trainerId).subscribe((data) => {
@@ -21,10 +21,9 @@ export class UpdateTrainerheadComponent implements OnInit {
     });
   }
 
-  updateTrainer(){
+  updateTrainer() {
     this.authservices.updateTrainer(this.trainerAuthDetails);
     alert('updated successfully');
-    this.router.navigate(['adminSettings'])
+    window.location.reload();
   }
-
 }

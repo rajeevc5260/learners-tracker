@@ -22,6 +22,7 @@ export class AddPlacementofficerComponent implements OnInit {
       .addPlacementOfficer(this.placementAuthDetail)
       .subscribe((res) => {
         alert('Placement Officer details added Sucessfully');
+        window.location.reload();
       });
   }
 }

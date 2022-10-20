@@ -17,6 +17,11 @@ export class LearnersDataService {
     return this.http.post<any>('http://localhost:3000/addData', learnersData);
   }
 
+    // Add multiple Candidate
+    addMultipleLearner(learnersData: any) {
+      return this.http.post<any>('http://localhost:3000/addMultipleData', learnersData);
+    }
+
   // get learner details to update by ID 
   getlearner(id: any) {
     return this.http.get('http://localhost:3000/learnerAnalytics/' + id);

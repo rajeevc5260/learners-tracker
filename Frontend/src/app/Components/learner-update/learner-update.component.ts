@@ -6,7 +6,7 @@ import { LearnersAnalyticsComponent } from '../learners-analytics/learners-analy
 @Component({
   selector: 'app-learner-update',
   templateUrl: './learner-update.component.html',
-  styleUrls: ['./learner-update.component.css']
+  styleUrls: ['./learner-update.component.css'],
 })
 export class LearnerUpdateComponent implements OnInit {
   learnerDetails = {
@@ -17,7 +17,10 @@ export class LearnerUpdateComponent implements OnInit {
     courseStatus: '',
     placementStatus: '',
   };
-  constructor(private router: Router, private learnerServices: LearnersDataService) {}
+  constructor(
+    private router: Router,
+    private learnerServices: LearnersDataService
+  ) {}
 
   ngOnInit(): void {
     let learnerId = localStorage.getItem('editLearnerId');
@@ -26,10 +29,9 @@ export class LearnerUpdateComponent implements OnInit {
     });
   }
 
-  updateLearner(){
+  updateLearner() {
     this.learnerServices.updateLearner(this.learnerDetails);
     alert('updated successfully');
-    this.router.navigate(['learnersAnalytics'])
+    window.location.reload();
   }
-
 }

@@ -13,7 +13,7 @@ import { LearnerDataModel } from '../../DataModel/learnerData.Model';
 })
 export class LearnersAnalyticsComponent implements OnInit {
   learnerDatas: LearnerDataModel[] = []; // Get for learner model
-  
+
   constructor(
     private dialogePopUp: MatDialog,
     private learnerServices: LearnersDataService
@@ -36,7 +36,9 @@ export class LearnersAnalyticsComponent implements OnInit {
   // delete a learner
   deleteLearner(learnerData: any) {
     this.learnerServices.deleteLearner(learnerData._id).subscribe((data) => {
-      this.learnerDatas = this.learnerDatas.filter((learner) => learner !== learnerData);
+      this.learnerDatas = this.learnerDatas.filter(
+        (learner) => learner !== learnerData
+      );
     });
   }
 

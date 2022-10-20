@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
-const adminLogin = require("./src/models/adminLogin");
+// const bodyParser = require("body-parser");
+const adminDetails = require("./src/models/adminLogin");
 const learnersData = require("./src/models/learnersData");
 const placementAuthData = require("./src/models/placementAuth");
 const trainerAuthData = require("./src/models/trainerAuth");
@@ -10,7 +10,7 @@ const PORT = 3000;
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Tested
 app.get("/", (req, res) => {
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 app.post("/login", (req, res) => {
   let adminData = req.body;
 
-  adminLogin.findOne({ email: adminData.email }, (error, admin) => {
+  adminDetails.findOne({ email: adminData.email }, (error, admin) => {
     if (error) {
       console.log(error);
     } else {
@@ -31,9 +31,9 @@ app.post("/login", (req, res) => {
         if (admin.password !== adminData.password) {
           res.status(401).send("Invalid password");
         } else {
-          let payload = { subject: admin._id };
-          let token = jwt.sign(payload, "secretKey");
-          res.status(200).send({ token });
+          // let payload = { subject: admin._id };
+          // let token = jwt.sign(payload, "secretKey");
+          res.status(200).send(admin);
         }
       }
     }
@@ -87,6 +87,34 @@ app.post("/addData", (req, res) => {
   });
 });
 
+// insert multiple Learners data POST
+app.post("/addMultipleData", (req, res) => {
+  var learnerDetails = {
+    learnerId: req.body.learnerId,
+    name: req.body.name,
+    project: req.body.project,
+    batch: req.body.batch,
+    courseStatus: req.body.courseStatus,
+  };
+  // var addLearnerData = learnersData(learnerDetails);
+  // addLearnerData.insertMany();
+
+  // learnersData.find().then((addLearnerData) => {
+  //   res.send(addLearnerData);
+  // });
+  learnersData
+    .insertMany(learnerDetails)
+    .then((learnersData) => {
+      res.status(201).send(learnersData);
+    })
+    .catch((error) => {
+      res.status(400).send(error);
+    });
+  learnersData.find().then((learnerDetails) => {
+    res.send(learnerDetails);
+  });
+});
+
 // Read learners Details in Analytics
 app.get("/learnerAnalytics", (req, res) => {
   learnersData.find().then((addLearnerData) => {
@@ -107,7 +135,6 @@ app.get("/trainerAuthDetails", (req, res) => {
     res.send(addTrainerAuthData);
   });
 });
-
 
 //get for update to find id
 app.get("/learnerAnalytics/:id", (req, res) => {
@@ -153,7 +180,6 @@ app.put("/learnerUpdate", (req, res) => {
       });
 });
 
-
 //get for update to find id for trainer
 app.get("/trainerAuth/:id", (req, res) => {
   const id = req.params.id;
@@ -187,7 +213,6 @@ app.put("/trainerAuthUpdate", (req, res) => {
         res.send();
       });
 });
-
 
 //get for update to find id for placement officer
 app.get("/placementOfficerAuth/:id", (req, res) => {

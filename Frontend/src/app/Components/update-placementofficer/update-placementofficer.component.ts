@@ -24,7 +24,7 @@ export class UpdatePlacementofficerComponent implements OnInit {
   updatePlacementOfficer(){
     this.authservices.updatePlacementOfficer(this.placementOfficerAuthDetails);
     alert('updated successfully');
-    this.router.navigate(['adminSettings'])
+    window.location.reload();
   }
 
 }

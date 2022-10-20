@@ -23,6 +23,7 @@ export class AddCandidatesComponent implements OnInit {
     console.log(this.learnerDetails);
     this.addLearnerServices.addLearner(this.learnerDetails).subscribe((res) => {
       alert('Candidate details added Sucessfully');
+      window.location.reload();
     });
   }
 }

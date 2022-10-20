@@ -28,5 +28,6 @@ export class UpdatePlacementstatusComponent implements OnInit {
   updateLearnerPlacement() {
     this.learnerServices.updateLearnerPlacement(this.learnerDetails);
     alert('updated successfully');
+    window.location.reload();
   }
 }

@@ -12,9 +12,9 @@ mongoose.connect(db, (err) => {
 
 const Schema = mongoose.Schema;
 const adminLoginSchema = new Schema({
-  name: String,
   email: String,
   password: String,
 });
 
-module.exports = mongoose.model("admin", adminLoginSchema, "admins");
+const adminDetails = mongoose.model("admin", adminLoginSchema);
+module.exports = adminDetails;
