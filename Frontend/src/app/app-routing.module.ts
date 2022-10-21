@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardSidenavComponent,
-    // canActivate :[AuthGuard],
+    canActivate :[AuthGuard],
     children: [
       { path: 'dashboardContent', component: DashboardContentComponent },
       { path: 'learnersAnalytics', component: LearnersAnalyticsComponent },
