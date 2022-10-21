@@ -49,8 +49,9 @@ export class UploadFileComponent implements OnInit {
   // add multiple learner function
   addLearner() {
     console.log(this.filelist[0]);
-    this.addLearnerServices.addMultipleLearner(this.uploadLearnerFile).subscribe((res) => {
-      alert('Candidate details added Sucessfully');      
+    this.addLearnerServices.addMultipleLearner(this.filelist[0]).subscribe((res) => {
+      alert('Candidate details added Sucessfully');  
+      // console.log(this.uploadLearnerFile);
       window.location.reload();
     });
   }

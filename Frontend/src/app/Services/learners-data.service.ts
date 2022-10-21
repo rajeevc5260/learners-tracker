@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class LearnersDataService {
+  static getLearnerDetails: any;
   constructor(private http: HttpClient) {}
 
   // Read Learner Analytics Details

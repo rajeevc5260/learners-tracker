@@ -9,7 +9,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,6 +32,10 @@ import { AddTrainerheadComponent } from './Components/add-trainerhead/add-traine
 import { UpdateTrainerheadComponent } from './Components/update-trainerhead/update-trainerhead.component';
 import { UpdatePlacementofficerComponent } from './Components/update-placementofficer/update-placementofficer.component';
 import { UpdatePlacementstatusComponent } from './Components/update-placementstatus/update-placementstatus.component';
+import { AuthService } from './Services/auth.service';
+import { LearnersDataService } from './Services/learners-data.service';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './Services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,12 @@ import { UpdatePlacementstatusComponent } from './Components/update-placementsta
     HttpClientModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard, LearnersDataService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

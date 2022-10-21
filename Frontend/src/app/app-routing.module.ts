@@ -9,13 +9,16 @@ import { PlacementsComponent } from './Components/placements/placements.componen
 import { DashboardContentComponent } from './Components/dashboard-content/dashboard-content.component';
 import { AddTrainerheadComponent } from './Components/add-trainerhead/add-trainerhead.component';
 import { AddPlacementofficerComponent } from './Components/add-placementofficer/add-placementofficer.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'dashboard', redirectTo: 'dashboard/dashboardContent', pathMatch:'full'},
   {
     path: 'dashboard',
     component: DashboardSidenavComponent,
+    // canActivate :[AuthGuard],
     children: [
       { path: 'dashboardContent', component: DashboardContentComponent },
       { path: 'learnersAnalytics', component: LearnersAnalyticsComponent },

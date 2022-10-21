@@ -9,6 +9,6 @@
       <input type="password" name="password" #password="ngModel" [(ngModel)]="adminLogs.password" [class.is-invalid]="password.invalid && password.touched"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" class="form-control" placeholder="Password" required="required"/>
       <small [class.d-none]="password.valid || password.untouched">*Enter valid password</small>
     </div>
-    <button class="btn" mat-button mat-dialog-close="true" [disabled]="loginDetail.invalid" routerLink="/dashboard">LOGIN</button>
+    <button class="btn" mat-button mat-dialog-close="true" [disabled]="loginDetail.invalid" (click)="loginAdmin()">LOGIN</button>
   </form>
 </div>

@@ -9,12 +9,10 @@
         <tr>
           <th>NAME</th>
           <th>EMAIL</th>
-          <th>PASSWORD</th>
         </tr>
         <tr *ngFor="let trainerAuth of trainerAuthDatas">
           <td>{{trainerAuth.name}}</td>
           <td>{{trainerAuth.email}}</td>
-          <td>{{trainerAuth.password}}</td>
           <button class="update" mat-button (click)="updateTrainer(trainerAuth)">
             <mat-icon>update</mat-icon> UPDATE
           </button>
@@ -32,12 +30,10 @@
         <tr>
           <th>NAME</th>
           <th>EMAIL</th>
-          <th>PASSWORD</th>
         </tr>
        <tr *ngFor="let placementAuth of adminAuthDatas">
           <td>{{placementAuth.name}}</td>
           <td>{{placementAuth.email}}</td>
-          <td>{{placementAuth.password}}</td>
           <button
             class="update"
             mat-button

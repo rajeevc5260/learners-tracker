@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +12,20 @@ export class LoginComponent implements OnInit {
     email: '',
     password: '',
   };
-  
-  constructor() {}
+
+  constructor(private _auth: AuthService, private router:Router) {}
 
   ngOnInit(): void {}
+
+  loginAdmin() {
+    this._auth.loginAdmin(this.adminLogs)
+    .subscribe(
+      res  => { 
+        console.log(res)
+        localStorage.setItem('token', res.token)
+        this.router.navigate(['/dashboard']);
+      },
+      // err  => alert('Invalid credentials')
+    );
+  }
 }

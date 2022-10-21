@@ -2,7 +2,7 @@
   <h1>LEARNERS ANALYTICS</h1>
 </div>
 <div class="filter">
-  <select class="form-select" aria-label="Default select example">
+  <select [(ngModel)]="filterProject" class="form-select" aria-label="Default select example">
     <option selected>Project</option>
     <option value="ICTAK">ICTAK</option>
     <option value="KKEM">KKEM</option>
@@ -10,19 +10,19 @@
     <option value="ABCD">ABCD</option>
     <option value="KDISC">KDISC</option>
   </select>
-  <select class="form-select" aria-label="Default select example">
+  <select [(ngModel)]="filterBatch" class="form-select" aria-label="Default select example">
     <option selected>Batch</option>
     <option value="May 22">MAY 22</option>
     <option value="Jun 22">JUN 22</option>
     <option value="Jul 22">JUL 22</option>
     <option value="Aug 22">AUG 22</option>
   </select>
-  <select class="form-select" aria-label="Default select example">
+  <select [(ngModel)]="filterCourseStatus" class="form-select" aria-label="Default select example">
     <option selected>Course Status</option>
     <option value="Qualified">Qualified</option>
     <option value="Incompetent">Incompetent</option>
   </select>
-  <button class="update" mat-button><mat-icon>search</mat-icon></button>
+  <button class="update" mat-button (click)="refresh()"><mat-icon>refresh</mat-icon></button>
 </div>
 <div class="learners-details">
   <form action="">
@@ -34,7 +34,7 @@
         <th>BATCH</th>
         <th>COURSE STATUS</th>
       </tr>
-      <tr *ngFor="let learnerData of learnerDatas">
+      <tr *ngFor="let learnerData of filteredLearnerDatas">
         <td>{{learnerData.learnerId}}</td>
         <td>{{learnerData.name}}</td>
         <td>{{learnerData.project}}</td>

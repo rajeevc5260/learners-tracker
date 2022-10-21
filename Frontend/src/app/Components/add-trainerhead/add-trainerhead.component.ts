@@ -22,6 +22,7 @@ export class AddTrainerheadComponent implements OnInit {
       .addTrainerHead(this.trainerAuthDetail)
       .subscribe((res) => {
         alert('Trainer head details added Sucessfully');
+        window.location.reload();
       });
   }
 }

@@ -5,6 +5,7 @@ const adminDetails = require("./src/models/adminLogin");
 const learnersData = require("./src/models/learnersData");
 const placementAuthData = require("./src/models/placementAuth");
 const trainerAuthData = require("./src/models/trainerAuth");
+const jwt = require('jsonwebtoken')
 
 const PORT = 3000;
 const app = express();
@@ -16,6 +17,24 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Server is ready GET");
 });
+
+// middleware function to verify Token
+function verifyToken(req, res, next){
+  if(!req.headers.authorization){
+    return res.status(401).send('Unauthorized request')
+  }
+  let token =req.headers.authorization.split(' ')[1]
+  if(token === 'null'){
+    return res.status(401).send('Unauthorized request')
+  }
+  let payload = jwt.verify(token, 'secretKey')
+  if(!payload){
+    return res.status(401).send('Unauthorized request')
+  }
+  req.adminId = payload.subject
+  next()
+}
+
 
 // Admin Login
 app.post("/login", (req, res) => {
@@ -31,9 +50,9 @@ app.post("/login", (req, res) => {
         if (admin.password !== adminData.password) {
           res.status(401).send("Invalid password");
         } else {
-          // let payload = { subject: admin._id };
-          // let token = jwt.sign(payload, "secretKey");
-          res.status(200).send(admin);
+          let payload = { subject: admin._id };
+          let token = jwt.sign(payload, "secretKey");
+          res.status(200).send({token});
         }
       }
     }
@@ -89,34 +108,19 @@ app.post("/addData", (req, res) => {
 
 // insert multiple Learners data POST
 app.post("/addMultipleData", (req, res) => {
-  var learnerDetails = {
-    learnerId: req.body.learnerId,
-    name: req.body.name,
-    project: req.body.project,
-    batch: req.body.batch,
-    courseStatus: req.body.courseStatus,
-  };
-  // var addLearnerData = learnersData(learnerDetails);
-  // addLearnerData.insertMany();
-
-  // learnersData.find().then((addLearnerData) => {
-  //   res.send(addLearnerData);
-  // });
   learnersData
-    .insertMany(learnerDetails)
-    .then((learnersData) => {
-      res.status(201).send(learnersData);
+    .insertMany(req.body)
+    .then((learnersDatas) => {
+      res.status(201).send(learnersDatas);
     })
     .catch((error) => {
       res.status(400).send(error);
     });
-  learnersData.find().then((learnerDetails) => {
-    res.send(learnerDetails);
-  });
 });
 
+
 // Read learners Details in Analytics
-app.get("/learnerAnalytics", (req, res) => {
+app.get("/learnerAnalytics", verifyToken, (req, res) => {
   learnersData.find().then((addLearnerData) => {
     res.send(addLearnerData);
   });
