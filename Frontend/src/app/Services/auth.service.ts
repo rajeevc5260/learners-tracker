@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router:Router) {}
 
   // Admin Login
   loginAdmin(admin: any) {
@@ -15,6 +16,11 @@ export class AuthService {
   // Admin LoggedIn
   adminLoggedIn() {
     return !!localStorage.getItem('token');
+  }
+
+  logOut(){
+    localStorage.removeItem('token')
+    this.router.navigate([''])
   }
 
   // auth Get Token

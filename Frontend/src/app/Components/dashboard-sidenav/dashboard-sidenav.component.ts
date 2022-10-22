@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-dashboard-sidenav',
@@ -16,7 +17,7 @@ export class DashboardSidenavComponent implements OnInit {
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
-  constructor(private observer: BreakpointObserver) {}
+  constructor(private observer: BreakpointObserver, public authServices:AuthService) {}
 
   ngOnInit(): void {}
 

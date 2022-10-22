@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from 'src/app/Services/auth.service';
 import { LoginComponent } from '../login/login.component';
+
 
 @Component({
   selector: 'app-header',
@@ -9,10 +11,13 @@ import { LoginComponent } from '../login/login.component';
 })
 export class HeaderComponent implements OnInit {
   title = 'LEARNER TRACKER';
-  constructor(private dialogePopUp: MatDialog) {}
+  constructor(private dialogePopUp: MatDialog, public authServices:AuthService) {}
 
   logOpen() {
     this.dialogePopUp.open(LoginComponent);
+  }
+  loggedOut(){
+
   }
 
   ngOnInit(): void {}
