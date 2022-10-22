@@ -5,7 +5,7 @@ const adminDetails = require("./src/models/adminLogin");
 const learnersData = require("./src/models/learnersData");
 const placementAuthData = require("./src/models/placementAuth");
 const trainerAuthData = require("./src/models/trainerAuth");
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
 const PORT = 3000;
 const app = express();
@@ -19,22 +19,21 @@ app.get("/", (req, res) => {
 });
 
 // middleware function to verify Token
-function verifyToken(req, res, next){
-  if(!req.headers.authorization){
-    return res.status(401).send('Unauthorized request')
+function verifyToken(req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(401).send("Unauthorized request");
   }
-  let token =req.headers.authorization.split(' ')[1]
-  if(token === 'null'){
-    return res.status(401).send('Unauthorized request')
+  let token = req.headers.authorization.split(" ")[1];
+  if (token === "null") {
+    return res.status(401).send("Unauthorized request");
   }
-  let payload = jwt.verify(token, 'secretKey')
-  if(!payload){
-    return res.status(401).send('Unauthorized request')
+  let payload = jwt.verify(token, "secretKey");
+  if (!payload) {
+    return res.status(401).send("Unauthorized request");
   }
-  req.adminId = payload.subject
-  next()
+  req.adminId = payload.subject;
+  next();
 }
-
 
 // Admin Login
 app.post("/login", (req, res) => {
@@ -52,19 +51,72 @@ app.post("/login", (req, res) => {
         } else {
           let payload = { subject: admin._id };
           let token = jwt.sign(payload, "secretKey");
-          res.status(200).send({token});
+          res.status(200).send({ token });
         }
       }
     }
   });
 });
 
-// Insert Data placement officer
+// placement Officer Login
+app.post("/placementLogin", (req, res) => {
+  let placementData = req.body;
+
+  placementAuthData.findOne(
+    { email: placementData.email },
+    (error, placement) => {
+      if (error) {
+        console.log(error);
+      } else {
+        if (!placement) {
+          res.status(401).send("Invalid email");
+        } else {
+          if (placement.password !== placementData.password) {
+            res.status(401).send("Invalid password");
+          } else {
+            let payload = { subject: placement._id };
+            let token = jwt.sign(payload, "secretKey");
+            res.status(200).send({ token });
+          }
+        }
+      }
+    }
+  );
+});
+
+// TrainerHead Login
+app.post("/trainerLogin", (req, res) => {
+  let trainerData = req.body;
+
+  trainerAuthData.findOne(
+    { email: trainerData.email },
+    (error, trainer) => {
+      if (error) {
+        console.log(error);
+      } else {
+        if (!trainer) {
+          res.status(401).send("Invalid email");
+        } else {
+          if (trainer.password !== trainerData.password) {
+            res.status(401).send("Invalid password");
+          } else {
+            let payload = { subject: trainer._id };
+            let token = jwt.sign(payload, "secretKey");
+            res.status(200).send({ token });
+          }
+        }
+      }
+    }
+  );
+});
+
+// Insert placement officer
 app.post("/addPlacementData", verifyToken, (req, res) => {
   var placementAuthDetails = {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
+    role: req.body.role
   };
   var addPlacementAuthData = placementAuthData(placementAuthDetails);
   addPlacementAuthData.save();
@@ -80,6 +132,7 @@ app.post("/addTrainerHeadData", verifyToken, (req, res) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
+    role: req.body.role
   };
   var addTrainerAuthData = trainerAuthData(trainerAuthDetails);
   addTrainerAuthData.save();
@@ -118,7 +171,6 @@ app.post("/addMultipleData", verifyToken, (req, res) => {
     });
 });
 
-
 // Read learners Details in Analytics
 app.get("/learnerAnalytics", verifyToken, (req, res) => {
   learnersData.find().then((addLearnerData) => {
@@ -127,7 +179,7 @@ app.get("/learnerAnalytics", verifyToken, (req, res) => {
 });
 
 // Read Placement officer Auth
-app.get("/placementAuthDetails",verifyToken, (req, res) => {
+app.get("/placementAuthDetails", verifyToken, (req, res) => {
   placementAuthData.find().then((addPlacementAuthData) => {
     res.send(addPlacementAuthData);
   });

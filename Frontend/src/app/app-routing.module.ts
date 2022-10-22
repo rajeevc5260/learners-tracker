@@ -10,6 +10,7 @@ import { DashboardContentComponent } from './Components/dashboard-content/dashbo
 import { AddTrainerheadComponent } from './Components/add-trainerhead/add-trainerhead.component';
 import { AddPlacementofficerComponent } from './Components/add-placementofficer/add-placementofficer.component';
 import { AuthGuard } from './auth.guard';
+import { POroleGuard } from './porole.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,9 +19,9 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardSidenavComponent,
-    canActivate :[AuthGuard],
+    //  canActivate:[POroleGuard],
     children: [
-      { path: 'dashboardContent', component: DashboardContentComponent},
+      { path: 'dashboardContent', component: DashboardContentComponent, canActivate:[POroleGuard]},
       { path: 'learnersAnalytics', component: LearnersAnalyticsComponent, canActivate :[AuthGuard], },
       {
         path: 'adminSettings',
@@ -31,7 +32,7 @@ const routes: Routes = [
 
         ],
       },
-      { path: 'placements', component: PlacementsComponent, canActivate :[AuthGuard], },
+      { path: 'placements', component: PlacementsComponent, canActivate:[POroleGuard] },
     ],
   },
 ];

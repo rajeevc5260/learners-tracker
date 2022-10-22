@@ -11,6 +11,7 @@ export class AddTrainerheadComponent implements OnInit {
     name: '',
     email: '',
     password: '',
+    role:'trainerHead'
   };
   constructor(private authServices: AuthService) {}
 

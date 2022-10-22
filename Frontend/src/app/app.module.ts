@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule  } from "@angular/material/tabs";
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { DashboardHeaderComponent } from './Components/dashboard-header/dashboard-header.component';
@@ -36,6 +37,7 @@ import { AuthService } from './Services/auth.service';
 import { LearnersDataService } from './Services/learners-data.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './Services/token-interceptor.service';
+import { POroleGuard } from './porole.guard';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,7 @@ import { TokenInterceptorService } from './Services/token-interceptor.service';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatTabsModule,
     MatCardModule,
     MatSidenavModule,
     MatDividerModule,
@@ -74,7 +77,7 @@ import { TokenInterceptorService } from './Services/token-interceptor.service';
     HttpClientModule,
     MatDialogModule
   ],
-  providers: [AuthService, AuthGuard, LearnersDataService,
+  providers: [AuthService, AuthGuard, LearnersDataService, POroleGuard,
   {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,

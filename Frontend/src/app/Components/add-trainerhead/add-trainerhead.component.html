@@ -7,6 +7,9 @@
     <input type="email" name="email" [(ngModel)]="trainerAuthDetail.email" class="form-control" placeholder="Email" />
   </div>
   <div class="mb-3">
+    <input type="text" disabled name="role" [(ngModel)]="trainerAuthDetail.role" class="form-control" />
+  </div>
+  <div class="mb-3">
     <input type="password" name="password" [(ngModel)]="trainerAuthDetail.password" class="form-control" placeholder="Password" />
   </div>
   <button mat-button class="add" mat-dialog-close="true" (click)="addTrainerHead()">ADD TRAINER HEAD</button>

@@ -1,14 +1,50 @@
-<div class="login-frm" >
-  <form #loginDetail="ngForm">
-    <mat-icon class="avatar">account_circle</mat-icon>
-    <div class="mb-3">
-      <input type="email" name="email" #email="ngModel" [(ngModel)]="adminLogs.email" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="Email" required="required"/>
-      <small [class.d-none]="email.valid || email.untouched">*Enter valid email</small>
+<mat-tab-group>
+  <mat-tab label="ADMIN">
+    <div class="login-frm" >
+      <form #loginDetail="ngForm">
+        <mat-icon class="avatar">account_circle</mat-icon>
+        <div class="mb-3">
+          <input type="email" name="email" #email="ngModel" [(ngModel)]="adminLogs.email" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="Email" required="required"/>
+          <small [class.d-none]="email.valid || email.untouched">*Enter valid email</small>
+        </div>
+        <div class="mb-3">
+          <input type="password" name="password" #password="ngModel" [(ngModel)]="adminLogs.password" [class.is-invalid]="password.invalid && password.touched"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" class="form-control" placeholder="Password" required="required"/>
+          <small [class.d-none]="password.valid || password.untouched">*Enter valid password</small>
+        </div>
+        <button class="btn" mat-button mat-dialog-close="true" [disabled]="loginDetail.invalid" (click)="loginAdmin()">LOGIN</button>
+      </form>
     </div>
-    <div class="mb-3">
-      <input type="password" name="password" #password="ngModel" [(ngModel)]="adminLogs.password" [class.is-invalid]="password.invalid && password.touched"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" class="form-control" placeholder="Password" required="required"/>
-      <small [class.d-none]="password.valid || password.untouched">*Enter valid password</small>
+  </mat-tab>
+  <mat-tab label="TRAINER HEAD">
+    <div class="login-frm" >
+      <form #loginDetail="ngForm">
+        <mat-icon class="avatar">account_circle</mat-icon>
+        <div class="mb-3">
+          <input type="email" name="email" #email="ngModel" [(ngModel)]="adminLogs.email" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="Email" required="required"/>
+          <small [class.d-none]="email.valid || email.untouched">*Enter valid email</small>
+        </div>
+        <div class="mb-3">
+          <input type="password" name="password" #password="ngModel" [(ngModel)]="adminLogs.password" [class.is-invalid]="password.invalid && password.touched"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" class="form-control" placeholder="Password" required="required"/>
+          <small [class.d-none]="password.valid || password.untouched">*Enter valid password</small>
+        </div>
+        <button class="btn" mat-button mat-dialog-close="true" [disabled]="loginDetail.invalid" (click)="loginTrainerHead()">LOGIN</button>
+      </form>
     </div>
-    <button class="btn" mat-button mat-dialog-close="true" [disabled]="loginDetail.invalid" (click)="loginAdmin()">LOGIN</button>
-  </form>
-</div>
+  </mat-tab>
+  <mat-tab label="PLACEMENT OFFICER">
+    <div class="login-frm" >
+      <form #loginDetail="ngForm">
+        <mat-icon class="avatar">account_circle</mat-icon>
+        <div class="mb-3">
+          <input type="email" name="email" #email="ngModel" [(ngModel)]="adminLogs.email" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="Email" required="required"/>
+          <small [class.d-none]="email.valid || email.untouched">*Enter valid email</small>
+        </div>
+        <div class="mb-3">
+          <input type="password" name="password" #password="ngModel" [(ngModel)]="adminLogs.password" [class.is-invalid]="password.invalid && password.touched"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" class="form-control" placeholder="Password" required="required"/>
+          <small [class.d-none]="password.valid || password.untouched">*Enter valid password</small>
+        </div>
+        <button class="btn" mat-button mat-dialog-close="true" [disabled]="loginDetail.invalid" (click)="loginPlacementOfficer()">LOGIN</button>
+      </form>
+    </div>
+  </mat-tab>
+</mat-tab-group>

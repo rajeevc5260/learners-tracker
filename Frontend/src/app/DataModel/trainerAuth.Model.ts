@@ -1,8 +1,8 @@
 export class trainerAuthDataModel {
-    constructor(
-      public name: String,
-      public email: String,
-      public password: String
-    ) {}
-  }
-  
+  constructor(
+    public name: String,
+    public email: String,
+    public password: String,
+    public role: String
+  ) {}
+}

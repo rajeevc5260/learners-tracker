@@ -25,7 +25,31 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.token)
         this.router.navigate(['/dashboard']);
       },
-      // err  => alert('Invalid credentials')
+      err  => alert('Invalid credentials, enter valid credential')
+    );
+  }
+
+  loginPlacementOfficer() {
+    this._auth.loginPlacementOfficer(this.adminLogs)
+    .subscribe(
+      res  => { 
+        console.log(res)
+        localStorage.setItem('token', res.token)
+        this.router.navigate(['/dashboard']);
+      },
+      err  => alert('Invalid credentials, enter valid credential')
+    );
+  }
+  
+  loginTrainerHead(){
+    this._auth.loginTrainerHead(this.adminLogs)
+    .subscribe(
+      res  => { 
+        console.log(res)
+        localStorage.setItem('token', res.token)
+        this.router.navigate(['/dashboard']);
+      },
+      err  => alert('Invalid credentials, enter valid credential')
     );
   }
 }

@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CanActivate } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
 import { LoginComponent } from './Components/login/login.component';
 import { AuthService } from './Services/auth.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class POroleGuard implements CanActivate {
   constructor(private _authService: AuthService,  private dialogePopUp:MatDialog ) {}
 
   canActivate(): boolean {
-    if (this._authService.adminLoggedIn()) {
+    if (this._authService.placementOfficerLoggedIn()) {
       return true;
     } else {
       this.dialogePopUp.open(LoginComponent);

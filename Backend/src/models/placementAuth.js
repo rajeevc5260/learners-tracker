@@ -8,7 +8,10 @@ const placementAuthSchema = mongoose.Schema({
   name: String,
   email: String,
   password: String,
+  role: String
+
 });
+
 
 const placementAuthData = mongoose.model("placementOfficerAuth", placementAuthSchema);
 

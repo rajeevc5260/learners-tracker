@@ -8,6 +8,7 @@ const trainerAuthSchema = mongoose.Schema({
   name: String,
   email: String,
   password: String,
+  role: String
 });
 
 const trainerAuthData = mongoose.model("trainerHeadAuth", trainerAuthSchema);

@@ -13,6 +13,22 @@ export class AuthService {
     return this.http.post<any>('http://localhost:3000/login', admin);
   }
 
+  // placementOfficer Login
+  loginPlacementOfficer(placementOfficer: any){
+    return this.http.post<any>('http://localhost:3000/placementLogin', placementOfficer)
+  }
+
+  placementOfficerLoggedIn() {
+    return !!localStorage.getItem('token');
+  }
+  // Trainer Login
+  loginTrainerHead(trainerHead: any){
+    return this.http.post<any>('http://localhost:3000/trainerLogin', trainerHead)
+  }
+  trainerHeadLoggedIn() {
+    return !!localStorage.getItem('token');
+  } 
+
   // Admin LoggedIn
   adminLoggedIn() {
     return !!localStorage.getItem('token');

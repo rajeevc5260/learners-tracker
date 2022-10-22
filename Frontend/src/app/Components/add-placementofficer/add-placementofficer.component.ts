@@ -11,6 +11,7 @@ export class AddPlacementofficerComponent implements OnInit {
     name: '',
     email: '',
     password: '',
+    role:'placementOfficer'
   };
   constructor(private authServices: AuthService) {}
 
