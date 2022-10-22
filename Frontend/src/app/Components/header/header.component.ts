@@ -16,9 +16,7 @@ export class HeaderComponent implements OnInit {
   logOpen() {
     this.dialogePopUp.open(LoginComponent);
   }
-  loggedOut(){
 
-  }
 
   ngOnInit(): void {}
 }

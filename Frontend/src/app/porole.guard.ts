@@ -11,7 +11,7 @@ import { AuthService } from './Services/auth.service';
 export class POroleGuard implements CanActivate {
   constructor(private _authService: AuthService,  private dialogePopUp:MatDialog ) {}
 
-  canActivate(): boolean {
+  canActivate() :boolean {
     if (this._authService.placementOfficerLoggedIn()) {
       return true;
     } else {
@@ -19,6 +19,7 @@ export class POroleGuard implements CanActivate {
       return false;
     }
   }
+  
 
 
  

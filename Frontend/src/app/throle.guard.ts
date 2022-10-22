@@ -11,16 +11,13 @@ import { AuthService } from './Services/auth.service';
 export class THroleGuard implements CanActivate {
   constructor(private _authService: AuthService,  private dialogePopUp:MatDialog ) {}
 
-  canActivate(): boolean {
-    if (this._authService.placementOfficerLoggedIn()) {
+  canActivate(): boolean{
+    if (this._authService.trainerHeadLoggedIn()) {
       return true;
     } else {
       this.dialogePopUp.open(LoginComponent);
       return false;
     }
-  }
-
-
- 
 }
 
+}

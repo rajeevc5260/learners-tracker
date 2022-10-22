@@ -5,6 +5,8 @@ import { AddCandidatesComponent } from '../add-candidates/add-candidates.compone
 import { LearnerUpdateComponent } from '../learner-update/learner-update.component';
 import { UploadFileComponent } from '../upload-file/upload-file.component';
 import { LearnerDataModel } from '../../DataModel/learnerData.Model';
+import { AuthService } from 'src/app/Services/auth.service';
+
 
 @Component({
   selector: 'app-learners-analytics',
@@ -55,7 +57,8 @@ export class LearnersAnalyticsComponent implements OnInit {
  
   constructor(
     private dialogePopUp: MatDialog,
-    private learnerServices: LearnersDataService
+    private learnerServices: LearnersDataService,
+    private _authServices: AuthService
   ) {}
 
    // filter using project

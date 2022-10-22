@@ -38,6 +38,8 @@ import { LearnersDataService } from './Services/learners-data.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './Services/token-interceptor.service';
 import { POroleGuard } from './porole.guard';
+import { ThSidenavComponent } from './Components/dashboard-sidenav/side/th-sidenav/th-sidenav.component';
+import { PoSidenavComponent } from './Components/dashboard-sidenav/side/po-sidenav/po-sidenav.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { POroleGuard } from './porole.guard';
     UpdateTrainerheadComponent,
     UpdatePlacementofficerComponent,
     UpdatePlacementstatusComponent,
+    ThSidenavComponent,
+    PoSidenavComponent,
   ],
   imports: [
     BrowserModule,

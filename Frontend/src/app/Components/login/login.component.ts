@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       res  => { 
         console.log(res)
         localStorage.setItem('token', res.token)
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/POdashboard']);
       },
       err  => alert('Invalid credentials, enter valid credential')
     );
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       res  => { 
         console.log(res)
         localStorage.setItem('token', res.token)
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/THdashboard']);
       },
       err  => alert('Invalid credentials, enter valid credential')
     );

@@ -11,18 +11,22 @@ import { AddTrainerheadComponent } from './Components/add-trainerhead/add-traine
 import { AddPlacementofficerComponent } from './Components/add-placementofficer/add-placementofficer.component';
 import { AuthGuard } from './auth.guard';
 import { POroleGuard } from './porole.guard';
+import { THroleGuard } from './throle.guard';
+import { ThSidenavComponent } from './Components/dashboard-sidenav/side/th-sidenav/th-sidenav.component';
+import { PoSidenavComponent } from './Components/dashboard-sidenav/side/po-sidenav/po-sidenav.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', redirectTo: 'dashboard/dashboardContent', pathMatch:'full' },
+  { path: 'POdashboard', redirectTo: 'POdashboard/dashboardContent', pathMatch:'full' },
+  { path: 'THdashboard', redirectTo: 'THdashboard/dashboardContent', pathMatch:'full' },
   {
     path: 'dashboard',
     component: DashboardSidenavComponent,
-    //  canActivate:[POroleGuard],
     children: [
-      { path: 'dashboardContent', component: DashboardContentComponent, canActivate:[POroleGuard]},
-      { path: 'learnersAnalytics', component: LearnersAnalyticsComponent, canActivate :[AuthGuard], },
+      { path: 'dashboardContent', component: DashboardContentComponent,canActivate:[AuthGuard]},
+      { path: 'learnersAnalytics', component: LearnersAnalyticsComponent, canActivate:[THroleGuard] },
       {
         path: 'adminSettings',
         component: AdminSettingsComponent, canActivate :[AuthGuard],
@@ -32,9 +36,23 @@ const routes: Routes = [
 
         ],
       },
-      { path: 'placements', component: PlacementsComponent, canActivate:[POroleGuard] },
+      { path: 'placements', component: PlacementsComponent, canActivate :[POroleGuard]},
     ],
   },
+  { path: 'POdashboard', component:PoSidenavComponent, 
+  children: [
+    { path: 'dashboardContent', component: DashboardContentComponent,canActivate:[AuthGuard]},
+
+    { path: 'placements', component: PlacementsComponent, canActivate :[POroleGuard]},
+  ],
+},
+  {path: 'THdashboard', component: ThSidenavComponent,
+
+  children: [
+    { path: 'dashboardContent', component: DashboardContentComponent,canActivate:[AuthGuard]},
+    { path: 'learnersAnalytics', component: LearnersAnalyticsComponent, canActivate:[THroleGuard] },
+  ],
+},
 ];
 
 @NgModule({
