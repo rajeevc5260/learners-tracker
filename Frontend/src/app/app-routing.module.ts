@@ -14,24 +14,24 @@ import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', redirectTo: 'dashboard/dashboardContent', pathMatch:'full'},
+  { path: 'dashboard', redirectTo: 'dashboard/dashboardContent', pathMatch:'full' },
   {
     path: 'dashboard',
     component: DashboardSidenavComponent,
     canActivate :[AuthGuard],
     children: [
-      { path: 'dashboardContent', component: DashboardContentComponent },
-      { path: 'learnersAnalytics', component: LearnersAnalyticsComponent },
+      { path: 'dashboardContent', component: DashboardContentComponent},
+      { path: 'learnersAnalytics', component: LearnersAnalyticsComponent, canActivate :[AuthGuard], },
       {
         path: 'adminSettings',
-        component: AdminSettingsComponent,
+        component: AdminSettingsComponent, canActivate :[AuthGuard],
         children: [
-          { path: 'tarinerHeadFrm', component: AddTrainerheadComponent },
+          { path: 'tarinerHeadFrm', component: AddTrainerheadComponent},
           { path: 'placementOfficerFrm', component: AddPlacementofficerComponent },
 
         ],
       },
-      { path: 'placements', component: PlacementsComponent },
+      { path: 'placements', component: PlacementsComponent, canActivate :[AuthGuard], },
     ],
   },
 ];

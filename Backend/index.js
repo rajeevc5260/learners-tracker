@@ -60,7 +60,7 @@ app.post("/login", (req, res) => {
 });
 
 // Insert Data placement officer
-app.post("/addPlacementData", (req, res) => {
+app.post("/addPlacementData", verifyToken, (req, res) => {
   var placementAuthDetails = {
     name: req.body.name,
     email: req.body.email,
@@ -75,7 +75,7 @@ app.post("/addPlacementData", (req, res) => {
 });
 
 // Insert Trainer head
-app.post("/addTrainerHeadData", (req, res) => {
+app.post("/addTrainerHeadData", verifyToken, (req, res) => {
   var trainerAuthDetails = {
     name: req.body.name,
     email: req.body.email,
@@ -90,7 +90,7 @@ app.post("/addTrainerHeadData", (req, res) => {
 });
 
 // insert Single Learners data POST
-app.post("/addData", (req, res) => {
+app.post("/addData", verifyToken, (req, res) => {
   var learnerDetails = {
     learnerId: req.body.learnerId,
     name: req.body.name,
@@ -107,7 +107,7 @@ app.post("/addData", (req, res) => {
 });
 
 // insert multiple Learners data POST
-app.post("/addMultipleData", (req, res) => {
+app.post("/addMultipleData", verifyToken, (req, res) => {
   learnersData
     .insertMany(req.body)
     .then((learnersDatas) => {
@@ -127,28 +127,28 @@ app.get("/learnerAnalytics", verifyToken, (req, res) => {
 });
 
 // Read Placement officer Auth
-app.get("/placementAuthDetails", (req, res) => {
+app.get("/placementAuthDetails",verifyToken, (req, res) => {
   placementAuthData.find().then((addPlacementAuthData) => {
     res.send(addPlacementAuthData);
   });
 });
 
 // Read Trainer head Auth
-app.get("/trainerAuthDetails", (req, res) => {
+app.get("/trainerAuthDetails", verifyToken, (req, res) => {
   trainerAuthData.find().then((addTrainerAuthData) => {
     res.send(addTrainerAuthData);
   });
 });
 
 //get for update to find id
-app.get("/learnerAnalytics/:id", (req, res) => {
+app.get("/learnerAnalytics/:id", verifyToken, (req, res) => {
   const id = req.params.id;
   learnersData.findOne({ _id: id }).then((learner) => {
     res.send(learner);
   });
 });
 // Update learnerAnalytics details
-app.put("/learnerUpdate", (req, res) => {
+app.put("/learnerUpdate", verifyToken, (req, res) => {
   var id = req.params.id;
   var learnerId = req.params.learnerId;
   var name = req.params.name;
@@ -185,7 +185,7 @@ app.put("/learnerUpdate", (req, res) => {
 });
 
 //get for update to find id for trainer
-app.get("/trainerAuth/:id", (req, res) => {
+app.get("/trainerAuth/:id", verifyToken, (req, res) => {
   const id = req.params.id;
   trainerAuthData.findOne({ _id: id }).then((trainer) => {
     res.send(trainer);
@@ -219,7 +219,7 @@ app.put("/trainerAuthUpdate", (req, res) => {
 });
 
 //get for update to find id for placement officer
-app.get("/placementOfficerAuth/:id", (req, res) => {
+app.get("/placementOfficerAuth/:id", verifyToken, (req, res) => {
   const id = req.params.id;
   placementAuthData.findOne({ _id: id }).then((placementOfficer) => {
     res.send(placementOfficer);
@@ -253,7 +253,7 @@ app.put("/placementAuthUpdate", (req, res) => {
 });
 
 // DELETE learners Details Via ID
-app.delete("/remove/:id", (req, res) => {
+app.delete("/remove/:id", verifyToken, (req, res) => {
   console.log("Deleting");
   learnersData.findByIdAndRemove(req.params.id, (err, deleteLearner) => {
     if (err) {
@@ -265,7 +265,7 @@ app.delete("/remove/:id", (req, res) => {
 });
 
 // DELETE Trainer Auth details Via ID
-app.delete("/trainerRemove/:id", (req, res) => {
+app.delete("/trainerRemove/:id", verifyToken, (req, res) => {
   console.log("Deleting");
   trainerAuthData.findByIdAndRemove(req.params.id, (err, deletetrainer) => {
     if (err) {
@@ -277,7 +277,7 @@ app.delete("/trainerRemove/:id", (req, res) => {
 });
 
 // DELETE placement Officer Via ID
-app.delete("/placementOfficerRemove/:id", (req, res) => {
+app.delete("/placementOfficerRemove/:id", verifyToken, (req, res) => {
   console.log("Deleting");
   placementAuthData.findByIdAndRemove(
     req.params.id,
